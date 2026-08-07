@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /fotografie-hochzeiten-*.html
+
+Sitemap: https://hegart.de/sitemap.xml
