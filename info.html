@@ -109,6 +109,35 @@
         </div>
       </div>
 
+      <form class="contact-form" action="https://formspree.io/f/mzepdgva" method="POST" id="contact-form">
+        <div class="contact-form-row">
+          <div>
+            <label for="cf-name"><span data-de>Name</span><span data-en>Name</span></label>
+            <input type="text" id="cf-name" name="name" required>
+          </div>
+          <div>
+            <label for="cf-email">E-Mail</label>
+            <input type="email" id="cf-email" name="_replyto" required>
+          </div>
+        </div>
+        <div>
+          <label for="cf-message"><span data-de>Nachricht</span><span data-en>Message</span></label>
+          <textarea id="cf-message" name="message" required></textarea>
+        </div>
+        <input type="hidden" name="_subject" value="Neue Anfrage über hegart.de">
+        <button type="submit" class="btn btn-primary">
+          <span data-de>Nachricht senden</span><span data-en>Send message</span>
+        </button>
+        <p class="contact-form-note">
+          <span data-de>Wir melden uns in der Regel innerhalb eines Werktages.</span>
+          <span data-en>We usually reply within one business day.</span>
+        </p>
+        <div class="contact-form-success" id="contact-form-success">
+          <span data-de>Danke! Ihre Nachricht wurde gesendet — wir melden uns bald.</span>
+          <span data-en>Thank you! Your message has been sent — we'll be in touch soon.</span>
+        </div>
+      </form>
+
       <p class="eyebrow" style="margin-top:2.5rem;"><span data-de>Folgen Sie uns</span><span data-en>Follow us</span></p>
       <div class="footer-social" style="margin-top:1rem;">
         <a href="https://wa.me/491785536715" target="_blank" rel="noopener" aria-label="WhatsApp" style="border-color:rgba(46,42,38,.2); color:var(--near-black);">
@@ -144,7 +173,7 @@
         <span data-en>Ready for your project?</span>
       </p>
       <a class="btn btn-primary" href="https://wa.me/491785536715" target="_blank" rel="noopener">
-        <span data-de>Jetzt schreiben</span><span data-en>Message us now</span>
+        <span data-de>Jetzt Termin sichern</span><span data-en>Book a slot now</span>
       </a>
     </div>
   </div>

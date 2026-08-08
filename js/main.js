@@ -139,3 +139,35 @@
     });
   }
 })();
+
+/* ---------- contact form (AJAX submit via Formspree) ---------- */
+(function () {
+  var form = document.getElementById('contact-form');
+  if (!form) return;
+  var successBox = document.getElementById('contact-form-success');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var data = new FormData(form);
+    var submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(function (response) {
+      if (response.ok) {
+        form.reset();
+        form.style.display = 'none';
+        if (successBox) successBox.classList.add('is-visible');
+      } else {
+        submitBtn.disabled = false;
+        alert('Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt per WhatsApp.');
+      }
+    }).catch(function () {
+      submitBtn.disabled = false;
+      alert('Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt per WhatsApp.');
+    });
+  });
+})();
