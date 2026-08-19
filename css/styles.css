@@ -1307,6 +1307,75 @@ html[lang="en"] a[data-en], html[lang="de"] a[data-de] { display: inline-flex; }
 .section-dark .print-card-desc { color: rgba(252, 246, 236, .68); }
 
 /* ============================================================
+   PRICING TABLE (feature-comparison, e.g. Tierfotografie)
+   ============================================================ */
+.pricing-table-wrap {
+  overflow-x: auto;
+  border-radius: 16px;
+  border: 1px solid rgba(46, 42, 38, .14);
+}
+.pricing-table {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: collapse;
+  background: var(--cream);
+}
+.pricing-table th,
+.pricing-table td {
+  padding: .9rem 1.2rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(46, 42, 38, .12);
+  font-size: .92rem;
+}
+.pricing-table th:first-child,
+.pricing-table td:first-child {
+  text-align: left;
+  font-weight: 500;
+  color: rgba(46, 42, 38, .72);
+  white-space: nowrap;
+}
+.pricing-table thead th {
+  padding-top: 1.5rem;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  vertical-align: bottom;
+}
+.pricing-table .tier-badge {
+  display: block;
+  margin-top: .35rem;
+  font-family: var(--font-mono);
+  font-size: .66rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--coral);
+  font-weight: 600;
+}
+.pricing-table .price-row td {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.pricing-table .is-featured {
+  background: rgba(232, 90, 42, .06);
+}
+.pricing-table th.is-featured { border-radius: 10px 10px 0 0; }
+.pricing-table tbody tr:last-child td { border-bottom: none; }
+.pricing-table .check { color: var(--coral); font-weight: 700; }
+.pricing-table .dash { color: rgba(46, 42, 38, .3); }
+.pricing-table .cta-row td { border-bottom: none; padding-top: 1.4rem; padding-bottom: 1.6rem; }
+.pricing-table .cta-row .btn { width: 100%; justify-content: center; }
+.section-dark .pricing-table-wrap { border-color: rgba(252, 246, 236, .16); }
+.section-dark .pricing-table { background: transparent; }
+.section-dark .pricing-table th,
+.section-dark .pricing-table td { border-bottom-color: rgba(252, 246, 236, .14); color: var(--cream); }
+.section-dark .pricing-table th:first-child,
+.section-dark .pricing-table td:first-child { color: rgba(252, 246, 236, .68); }
+.section-dark .pricing-table .is-featured { background: rgba(240, 169, 60, .08); }
+.section-dark .pricing-table .check { color: var(--amber); }
+.section-dark .pricing-table .dash { color: rgba(252, 246, 236, .3); }
+
+/* ============================================================
    RESPONSIVE NAV (mobile)
    ============================================================ */
 @media (max-width: 780px) {

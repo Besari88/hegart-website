@@ -46,6 +46,16 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://hegart.de/babyfotografie.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hegart.de/tierfotografie.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://hegart.de/passfotografie.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
