@@ -44,6 +44,22 @@
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
+  /* ---------- mobile nav burger ---------- */
+  var burger = document.querySelector('.nav-burger');
+  if (nav && burger) {
+    burger.setAttribute('aria-expanded', 'false');
+    burger.addEventListener('click', function () {
+      var open = nav.classList.toggle('is-nav-open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.querySelectorAll('.nav-links a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        nav.classList.remove('is-nav-open');
+        burger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
   /* ---------- hero kinetic title: split into chars ---------- */
   document.querySelectorAll('[data-split-chars]').forEach(function (el) {
     var text = el.textContent;

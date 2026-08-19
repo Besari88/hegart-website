@@ -2,13 +2,13 @@
 <html lang="de"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fotografie — Hegart Studio | Hochzeitsfotografie in Singen</title>
-<meta name="description" content="Hochzeitsfotografie und mehr aus Singen: authentisch, künstlerisch, unaufdringlich. Wir halten echte Momente fest, keine gestellten Posen.">
+<title>Fotografie in Singen — Business & Privat | Hegart Studio</title>
+<meta name="description" content="Fotografie aus Singen für Unternehmen und Privatpersonen: Produkt, Corporate, Event, Immobilien, Gastronomie sowie Hochzeit, Porträt und mehr.">
 <link rel="canonical" href="https://hegart.de/fotografie.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Hegart Studio">
-<meta property="og:title" content="Fotografie — Hegart Studio | Hochzeitsfotografie in Singen">
-<meta property="og:description" content="Hochzeitsfotografie und mehr aus Singen: authentisch, künstlerisch, unaufdringlich. Wir halten echte Momente fest, keine gestellten Posen.">
+<meta property="og:title" content="Fotografie in Singen — Business & Privat | Hegart Studio">
+<meta property="og:description" content="Fotografie aus Singen für Unternehmen und Privatpersonen: Produkt, Corporate, Event, Immobilien, Gastronomie sowie Hochzeit, Porträt und mehr.">
 <meta property="og:url" content="https://hegart.de/fotografie.html">
 <meta property="og:image" content="https://hegart.de/media/foto-1785921858088-1.webp">
 <meta property="og:locale" content="de_DE">
@@ -801,6 +801,7 @@ html[lang="en"] a[data-en], html[lang="de"] a[data-de] { display: inline-flex; }
   filter: brightness(.72);
 }
 .cat-tile:hover img { transform: scale(1.05); filter: brightness(.55); }
+.cat-tile.is-wide { grid-column: span 2; aspect-ratio: 32 / 11; }
 .cat-tile-title {
   position: relative;
   z-index: 1;
@@ -816,6 +817,7 @@ html[lang="en"] a[data-en], html[lang="de"] a[data-de] { display: inline-flex; }
 }
 @media (max-width: 700px) {
   .cat-grid { grid-template-columns: 1fr; }
+  .cat-tile.is-wide { grid-column: span 1; aspect-ratio: 16 / 11; }
 }
 
 /* ============================================================
@@ -1090,7 +1092,25 @@ html[lang="en"] a[data-en], html[lang="de"] a[data-de] { display: inline-flex; }
    ============================================================ */
 @media (max-width: 780px) {
   .nav-links { display: none; }
+  .nav-cta { display: none; }
   .nav-burger { display: flex; }
+  .nav.is-nav-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--ink-navy);
+    padding: 1.5rem var(--gutter) 2rem;
+    border-bottom: 1px solid rgba(252, 246, 236, .1);
+  }
+  .nav-burger[aria-expanded="true"] svg line:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .nav-burger[aria-expanded="true"] svg line:nth-child(2) { opacity: 0; }
+  .nav-burger[aria-expanded="true"] svg line:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+  .nav-burger svg line { transition: transform .25s var(--ease-out), opacity .2s; transform-origin: center; }
 }
 </style>
 <style id="__hegart_edits" data-model="{&quot;e1&quot;:{&quot;desktop&quot;:{},&quot;tablet&quot;:{&quot;object-fit&quot;:&quot;cover&quot;,&quot;object-position&quot;:&quot;40% 64%&quot;},&quot;mobile&quot;:{}},&quot;e2&quot;:{&quot;desktop&quot;:{},&quot;tablet&quot;:{&quot;object-fit&quot;:&quot;cover&quot;,&quot;object-position&quot;:&quot;55% 86%&quot;},&quot;mobile&quot;:{}}}">@media (max-width:900px){[data-eid="e1"]{object-fit:cover !important;object-position:40% 64% !important}[data-eid="e2"]{object-fit:cover !important;object-position:55% 86% !important}}</style></head>
@@ -1129,75 +1149,73 @@ html[lang="en"] a[data-en], html[lang="de"] a[data-de] { display: inline-flex; }
   <div class="wrap page-hero-inner">
     <p class="page-hero-crumb fade-up-in"><a href="index.html">Home</a> / <span data-de="">Fotografie</span><span data-en="">Photography</span></p>
     <h1 class="page-hero-title fade-up-in fade-up-in-1">
-      <span data-de="">Momente, <em class="accent">echt</em> eingefangen.</span>
-      <span data-en="">Moments, captured <em class="accent">real</em>.</span>
+      <span data-de="">Bilder, die <em class="accent">wirken</em>.</span>
+      <span data-en="">Images that <em class="accent">work</em>.</span>
     </h1>
     <p class="page-hero-sub fade-up-in fade-up-in-2">
-      <span data-de="">Hochzeitsfotografie und mehr — authentisch, künstlerisch, unaufdringlich.</span>
-      <span data-en="">Wedding photography and beyond — authentic, artistic, unobtrusive.</span>
+      <span data-de="">Fotografie für Unternehmen und für Ihre privaten Momente — aus Singen.</span>
+      <span data-en="">Photography for businesses and for your private moments — from Singen.</span>
     </p>
     <div class="page-hero-actions fade-up-in fade-up-in-3">
-      <a class="btn btn-primary" href="https://wa.me/491785536715" target="_blank" rel="noopener">
-        <span data-de="">Termin anfragen</span><span data-en="">Enquire now</span>
+      <a class="btn btn-primary" href="#business">
+        <span data-de="">Business-Shooting anfragen</span><span data-en="">Enquire — business</span>
+      </a>
+      <a class="btn btn-ghost" href="#privat">
+        <span data-de="">Hochzeit & Porträt anfragen</span><span data-en="">Enquire — wedding & portrait</span>
       </a>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section section-dark" id="business">
   <div class="wrap">
     <div class="section-head reveal is-visible">
-      <p class="eyebrow"><span data-de="">Über die Arbeit</span><span data-en="">About the work</span></p>
+      <p class="eyebrow"><span data-de="">Für Unternehmen</span><span data-en="">For businesses</span></p>
       <h2 class="section-title">
-        <span data-de="">Keine gestellten Posen. <em>Echte Geschichten.</em></span>
-        <span data-en="">No staged poses. <em>Real stories.</em></span>
+        <span data-de="">Fotografie, die <em>verkauft</em>.</span>
+        <span data-en="">Photography that <em>sells</em>.</span>
       </h2>
       <p class="section-lede">
-        <span data-de="">Hochzeitsfotografie fängt heute die Essenz von Liebe und Feier auf eine einzigartige, künstlerische und authentische Weise ein. Sie geht über traditionelle, inszenierte Aufnahmen hinaus, um eine Geschichte zu erzählen, Emotionen hervorzurufen und kostbare Momente zu bewahren, die ein Leben lang geschätzt werden. Neben Hochzeiten begleiten wir auch Paar-Shootings, Portraits und besondere Anlässe.</span>
-        <span data-en="">Wedding photography today captures the essence of love and celebration in a unique, artistic and authentic way. It goes beyond traditional, staged shots to tell a story, evoke emotion and preserve precious moments that can be treasured for a lifetime. Beyond weddings, we also shoot couple sessions, portraits and special occasions.</span>
+        <span data-de="">Produkt-, Team-, Event- und Objektfotografie für Unternehmen in Singen, Radolfzell und Konstanz.</span>
+        <span data-en="">Product, team, event and property photography for businesses in Singen, Radolfzell and Konstanz.</span>
       </p>
     </div>
-
-    <div class="feature-grid">
-      <div class="reveal is-visible">
-        <div class="feature-item-num">01</div>
-        <h3 class="feature-item-title"><span data-de="">Authentisch</span><span data-en="">Authentic</span></h3>
-        <p class="feature-item-text">
-          <span data-de="">Echte Emotionen statt gestellter Posen — wir dokumentieren, statt zu inszenieren.</span>
-          <span data-en="">Real emotion instead of staged poses — we document rather than direct.</span>
-        </p>
-      </div>
-      <div class="reveal reveal-delay-1 is-visible">
-        <div class="feature-item-num">02</div>
-        <h3 class="feature-item-title"><span data-de="">Künstlerisch</span><span data-en="">Artistic</span></h3>
-        <p class="feature-item-text">
-          <span data-de="">Ein geschultes Auge für Licht, Komposition und den richtigen Moment.</span>
-          <span data-en="">A trained eye for light, composition and the decisive moment.</span>
-        </p>
-      </div>
-      <div class="reveal reveal-delay-2 is-visible">
-        <div class="feature-item-num">03</div>
-        <h3 class="feature-item-title"><span data-de="">Unaufdringlich</span><span data-en="">Unobtrusive</span></h3>
-        <p class="feature-item-text">
-          <span data-de="">Wir bewegen uns im Hintergrund, damit Ihr Tag ganz natürlich bleibt.</span>
-          <span data-en="">We stay in the background so your day unfolds naturally.</span>
-        </p>
-      </div>
-    </div>
+  </div>
+  <div class="cat-grid reveal is-visible">
+    <a href="produktfotografie.html" class="cat-tile">
+      <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1000&amp;q=65&amp;auto=format&amp;fit=crop" alt="Produktfotografie" loading="lazy">
+      <span class="cat-tile-title"><span data-de="">Produktfotografie</span><span data-en="">Product Photography</span></span>
+    </a>
+    <a href="corporatefotografie.html" class="cat-tile">
+      <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=1000&amp;q=65&amp;auto=format&amp;fit=crop" alt="Corporate Fotografie" loading="lazy">
+      <span class="cat-tile-title">Corporate Fotografie</span>
+    </a>
+    <a href="eventfotografie.html" class="cat-tile">
+      <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1000&amp;q=65&amp;auto=format&amp;fit=crop" alt="Eventfotografie" loading="lazy">
+      <span class="cat-tile-title"><span data-de="">Eventfotografie</span><span data-en="">Event Photography</span></span>
+    </a>
+    <a href="immobilienfotografie.html" class="cat-tile">
+      <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1000&amp;q=65&amp;auto=format&amp;fit=crop" alt="Architektur &amp; Immobilien" loading="lazy">
+      <span class="cat-tile-title"><span data-de="">Architektur &amp; Immobilien</span><span data-en="">Architecture &amp; Real Estate</span></span>
+    </a>
+    <a href="gastronomiefotografie.html" class="cat-tile is-wide">
+      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1000&amp;q=65&amp;auto=format&amp;fit=crop" alt="Gastronomie &amp; Hotellerie" loading="lazy">
+      <span class="cat-tile-title"><span data-de="">Gastronomie &amp; Hotellerie</span><span data-en="">Restaurants &amp; Hotels</span></span>
+    </a>
   </div>
 </section>
 
-<section class="section section-dark">
+<section class="section" id="privat">
   <div class="wrap">
     <div class="section-head reveal is-visible">
-      <p class="eyebrow"><span data-de="">Portfolio</span><span data-en="">Portfolio</span></p>
+      <p class="eyebrow"><span data-de="">Für Sie privat</span><span data-en="">For you, privately</span></p>
       <h2 class="section-title">
-        <span data-de="">Wähle einen <em>Stil</em>.</span>
-        <span data-en="">Choose a <em>style</em>.</span>
+        <span data-de="">Echte Momente. <em>Keine gestellten Posen.</em></span>
+        <span data-en="">Real moments. <em>No staged poses.</em></span>
       </h2>
       <p class="section-lede">
-        <span data-de="">Platzhalter-Kategorien — bereit, mit echten Hegart-Aufnahmen ersetzt zu werden.</span>
-        <span data-en="">Placeholder categories — ready to be replaced with real Hegart shots.</span>
+        <span data-de="">Hochzeiten, Porträts und besondere Anlässe — authentisch, künstlerisch, unaufdringlich festgehalten.</span>
+        <span data-en="">Weddings, portraits and special occasions — captured authentically, artistically, unobtrusively.</span>
       </p>
     </div>
   </div>
@@ -1210,25 +1228,9 @@ html[lang="en"] a[data-en], html[lang="de"] a[data-de] { display: inline-flex; }
       <img src="media/extracted/fotografie-6643a87afc62.webp" alt="Porträtfotografie" loading="lazy" draggable="false" data-eid="e1">
       <span class="cat-tile-title"><span data-de="">Porträtfotografie</span><span data-en="">Portrait Photography</span></span>
     </a>
-    <a href="fotografie-produkt.html" class="cat-tile">
-      <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1000&amp;q=65&amp;auto=format&amp;fit=crop" alt="Produktfotografie" loading="lazy">
-      <span class="cat-tile-title"><span data-de="">Produktfotografie</span><span data-en="">Product Photography</span></span>
-    </a>
-    <a href="fotografie-corporate.html" class="cat-tile">
-      <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=1000&amp;q=65&amp;auto=format&amp;fit=crop" alt="Corporate Fotografie" loading="lazy">
-      <span class="cat-tile-title">Corporate Fotografie</span>
-    </a>
     <a href="fotografie-mode.html" class="cat-tile">
       <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1000&amp;q=65&amp;auto=format&amp;fit=crop" alt="Modefotografie" loading="lazy">
       <span class="cat-tile-title"><span data-de="">Modefotografie</span><span data-en="">Fashion Photography</span></span>
-    </a>
-    <a href="fotografie-event.html" class="cat-tile">
-      <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1000&amp;q=65&amp;auto=format&amp;fit=crop" alt="Eventfotografie" loading="lazy">
-      <span class="cat-tile-title"><span data-de="">Eventfotografie</span><span data-en="">Event Photography</span></span>
-    </a>
-    <a href="fotografie-architektur.html" class="cat-tile">
-      <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1000&amp;q=65&amp;auto=format&amp;fit=crop" alt="Architektur &amp; Immobilien" loading="lazy">
-      <span class="cat-tile-title"><span data-de="">Architektur &amp; Immobilien</span><span data-en="">Architecture &amp; Real Estate</span></span>
     </a>
     <a href="fotografie-urban.html" class="cat-tile">
       <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=1000&amp;q=65&amp;auto=format&amp;fit=crop" alt="Urban &amp; Street" loading="lazy">
@@ -1239,10 +1241,34 @@ html[lang="en"] a[data-en], html[lang="de"] a[data-de] { display: inline-flex; }
 
 <section class="section">
   <div class="wrap">
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 2.5rem;">
+      <img src="media/e-passbild.webp" alt="E-Passbild" style="border-radius: 10px; display: block; flex: 1 1 300px; max-width: 420px;">
+      <div style="flex: 1 1 300px; max-width: 420px;">
+        <p class="eyebrow"><span data-de="">Digitaler Service</span><span data-en="">Digital service</span></p>
+        <h2 class="section-title" style="font-size: clamp(1.7rem, 3.4vw, 2.4rem); margin-top: .6rem;">
+          <span data-de="">Passfoto-Service <em>in Deutschland</em>.</span>
+          <span data-en="">Passport photo service <em>in Germany</em>.</span>
+        </h2>
+        <p class="section-lede">
+          <span data-de="">Unser Fotostudio bietet einen professionellen digitalen Reisepassfoto-Service an. Diese biometrischen Fotos werden für alle offiziellen Dokumente benötigt, wie Personalausweis, Reisepass, Führerschein und weitere amtliche Unterlagen. Zusätzlich fertigen wir Visafotos für Länder aus aller Welt an — individuell angepasst an die jeweiligen nationalen Vorgaben.</span>
+          <span data-en>Our photo studio offers a professional digital passport photo service. These biometric photos are required for all official documents, such as ID cards, passports, driving licenses and other official papers. We also produce visa photos for countries all over the world — individually adapted to the respective national requirements.</span>
+        </p>
+        <div class="page-hero-actions" style="margin-top: 1.5rem;">
+          <a class="btn btn-primary" href="passfotografie.html">
+            <span data-de="">Mehr erfahren</span><span data-en="">Learn more</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
     <div class="cta-band reveal">
       <p class="cta-band-title">
-        <span data-de="">Erzählen Sie uns von Ihrem großen Tag.</span>
-        <span data-en="">Tell us about your big day.</span>
+        <span data-de="">Erzählen Sie uns von Ihrem Projekt — geschäftlich oder privat.</span>
+        <span data-en="">Tell us about your project — business or private.</span>
       </p>
       <a class="btn btn-primary" href="https://wa.me/491785536715" target="_blank" rel="noopener">
         <span data-de="">Jetzt Termin sichern</span><span data-en="">Book a slot now</span>

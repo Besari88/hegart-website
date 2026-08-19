@@ -481,6 +481,9 @@ html[lang="en"] a[data-en], html[lang="de"] a[data-de] { display: inline-flex; }
   color: rgba(46, 42, 38, .68);
   line-height: 1.55;
 }
+.section-dark .feature-grid { border-top-color: rgba(252, 246, 236, .14); }
+.section-dark .feature-item-num { color: var(--amber); }
+.section-dark .feature-item-text { color: rgba(252, 246, 236, .68); }
 
 /* ============================================================
    GALLERY GRID (service portfolio placeholder)
@@ -1188,9 +1191,143 @@ html[lang="en"] a[data-en], html[lang="de"] a[data-de] { display: inline-flex; }
 .footer-legal a:hover { color: var(--cream); }
 
 /* ============================================================
+   PRICING CARDS (service pages)
+   ============================================================ */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+.price-card {
+  border: 1px solid rgba(46, 42, 38, .14);
+  border-radius: 20px;
+  padding: 2.2rem 1.9rem;
+  display: flex;
+  flex-direction: column;
+  transition: border-color .3s, transform .3s;
+}
+.price-card:hover { border-color: rgba(232, 90, 42, .4); transform: translateY(-3px); }
+.price-card.is-highlighted { border-color: var(--coral); background: rgba(232, 90, 42, .04); }
+.price-card-name {
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--coral);
+}
+.price-card-amount {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3vw, 2.4rem);
+  font-weight: 600;
+  margin: .6rem 0;
+}
+.price-card-amount .unit { font-size: .95rem; font-weight: 400; color: rgba(46, 42, 38, .6); }
+.price-card-desc {
+  font-size: .92rem;
+  color: rgba(46, 42, 38, .68);
+  line-height: 1.55;
+  flex-grow: 1;
+}
+
+/* ============================================================
+   FAQ LIST (service pages)
+   ============================================================ */
+.faq-list {
+  max-width: 46rem;
+  border-top: 1px solid rgba(46, 42, 38, .12);
+}
+.faq-item {
+  padding: 1.6rem 0;
+  border-bottom: 1px solid rgba(46, 42, 38, .12);
+}
+.faq-q {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0 0 .5rem;
+}
+.faq-a {
+  font-size: .92rem;
+  color: rgba(46, 42, 38, .68);
+  line-height: 1.6;
+  margin: 0;
+}
+.section-dark .faq-list { border-top-color: rgba(252, 246, 236, .16); }
+.section-dark .faq-item { border-bottom-color: rgba(252, 246, 236, .16); }
+.section-dark .faq-a { color: rgba(252, 246, 236, .68); }
+
+/* ============================================================
+   PRINT CARDS (design.html — services priced on request)
+   ============================================================ */
+.print-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+}
+.print-card {
+  border: 1px solid rgba(46, 42, 38, .14);
+  border-radius: 20px;
+  padding: 2rem 1.7rem;
+  display: flex;
+  flex-direction: column;
+  transition: border-color .3s, transform .3s;
+}
+.print-card:hover { border-color: rgba(232, 90, 42, .4); transform: translateY(-3px); }
+.print-card-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 .6rem;
+}
+.print-card-desc {
+  font-size: .9rem;
+  color: rgba(46, 42, 38, .68);
+  line-height: 1.55;
+  flex-grow: 1;
+}
+.print-card-tag {
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-top: 1.3rem;
+}
+.print-card-link {
+  margin-top: .5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .5em;
+  font-size: .88rem;
+  font-weight: 600;
+}
+.print-card-link svg { width: 14px; height: 14px; transition: transform .3s var(--ease-out); }
+.print-card:hover .print-card-link svg { transform: translate(3px, -3px); }
+.section-dark .print-card { border-color: rgba(252, 246, 236, .16); }
+.section-dark .print-card-desc { color: rgba(252, 246, 236, .68); }
+
+/* ============================================================
    RESPONSIVE NAV (mobile)
    ============================================================ */
 @media (max-width: 780px) {
   .nav-links { display: none; }
+  .nav-cta { display: none; }
   .nav-burger { display: flex; }
+  .nav.is-nav-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--ink-navy);
+    padding: 1.5rem var(--gutter) 2rem;
+    border-bottom: 1px solid rgba(252, 246, 236, .1);
+  }
+  .nav-burger[aria-expanded="true"] svg line:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .nav-burger[aria-expanded="true"] svg line:nth-child(2) { opacity: 0; }
+  .nav-burger[aria-expanded="true"] svg line:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+  .nav-burger svg line { transition: transform .25s var(--ease-out), opacity .2s; transform-origin: center; }
 }

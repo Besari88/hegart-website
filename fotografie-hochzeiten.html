@@ -820,9 +820,6 @@ html[lang="en"] a[data-en], html[lang="de"] a[data-de] { display: inline-flex; }
   overflow: hidden;
 }
 .couple-tile.is-tall { aspect-ratio: 3 / 5; }
-@media (min-width: 700px) {
-  .couple-tile:nth-child(1) { grid-row: span 2; aspect-ratio: 3 / 5.3; }
-}
 .couple-tile img {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
@@ -849,7 +846,6 @@ html[lang="en"] a[data-en], html[lang="de"] a[data-de] { display: inline-flex; }
 }
 @media (max-width: 700px) {
   .couples-grid { grid-template-columns: 1fr; }
-  .couple-tile:nth-child(1) { grid-row: auto; aspect-ratio: 3/4; }
 }
 
 /* ============================================================
@@ -1077,8 +1073,69 @@ html[lang="en"] a[data-en], html[lang="de"] a[data-de] { display: inline-flex; }
    ============================================================ */
 @media (max-width: 780px) {
   .nav-links { display: none; }
+  .nav-cta { display: none; }
   .nav-burger { display: flex; }
+  .nav.is-nav-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--ink-navy);
+    padding: 1.5rem var(--gutter) 2rem;
+    border-bottom: 1px solid rgba(252, 246, 236, .1);
+  }
+  .nav-burger[aria-expanded="true"] svg line:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .nav-burger[aria-expanded="true"] svg line:nth-child(2) { opacity: 0; }
+  .nav-burger[aria-expanded="true"] svg line:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+  .nav-burger svg line { transition: transform .25s var(--ease-out), opacity .2s; transform-origin: center; }
 }
+
+/* ============================================================
+   PRICING CARDS (service pages)
+   ============================================================ */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+.price-card {
+  border: 1px solid rgba(46, 42, 38, .14);
+  border-radius: 20px;
+  padding: 2.2rem 1.9rem;
+  display: flex;
+  flex-direction: column;
+  transition: border-color .3s, transform .3s;
+}
+.price-card:hover { border-color: rgba(232, 90, 42, .4); transform: translateY(-3px); }
+.price-card.is-highlighted { border-color: var(--coral); background: rgba(232, 90, 42, .04); }
+.price-card-name {
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--coral);
+}
+.price-card-amount {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3vw, 2.4rem);
+  font-weight: 600;
+  margin: .6rem 0;
+}
+.price-card-amount .unit { font-size: .95rem; font-weight: 400; color: rgba(46, 42, 38, .6); }
+.price-card-desc {
+  font-size: .92rem;
+  color: rgba(46, 42, 38, .68);
+  line-height: 1.55;
+  flex-grow: 1;
+}
+.section-dark .price-card { border-color: rgba(252, 246, 236, .16); }
+.section-dark .price-card.is-highlighted { border-color: var(--amber); background: rgba(240, 169, 60, .08); }
+.section-dark .price-card-desc { color: rgba(252, 246, 236, .68); }
+.section-dark .price-card-amount .unit { color: rgba(252, 246, 236, .6); }
 </style>
 <style id="__hegart_edits" data-model="{&quot;e1&quot;: {&quot;desktop&quot;: {&quot;object-fit&quot;: &quot;cover&quot;, &quot;object-position&quot;: &quot;20% 49%&quot;}, &quot;tablet&quot;: {}, &quot;mobile&quot;: {}}, &quot;e2&quot;: {&quot;desktop&quot;: {&quot;object-fit&quot;: &quot;cover&quot;, &quot;object-position&quot;: &quot;69% 50%&quot;, &quot;padding-bottom&quot;: &quot;0px&quot;, &quot;margin-bottom&quot;: &quot;50px&quot;, &quot;margin-left&quot;: &quot;0px&quot;}, &quot;tablet&quot;: {}, &quot;mobile&quot;: {}}, &quot;e3&quot;: {&quot;desktop&quot;: {&quot;object-fit&quot;: &quot;cover&quot;, &quot;object-position&quot;: &quot;49% 49%&quot;}, &quot;tablet&quot;: {}, &quot;mobile&quot;: {}}, &quot;e4&quot;: {&quot;desktop&quot;: {&quot;min-height&quot;: &quot;0px&quot;, &quot;height&quot;: &quot;500px&quot;}, &quot;tablet&quot;: {}, &quot;mobile&quot;: {&quot;object-fit&quot;: &quot;cover&quot;, &quot;object-position&quot;: &quot;67% 46%&quot;}}, &quot;e5&quot;: {&quot;desktop&quot;: {&quot;left&quot;: &quot;22px&quot;, &quot;top&quot;: &quot;440px&quot;, &quot;min-height&quot;: &quot;0px&quot;}, &quot;tablet&quot;: {}, &quot;mobile&quot;: {}}, &quot;e6&quot;: {&quot;desktop&quot;: {&quot;min-height&quot;: &quot;0px&quot;, &quot;position&quot;: &quot;absolute&quot;, &quot;left&quot;: &quot;3px&quot;, &quot;top&quot;: &quot;1203px&quot;, &quot;width&quot;: &quot;558px&quot;, &quot;margin&quot;: &quot;0&quot;, &quot;z-index&quot;: &quot;20&quot;}, &quot;tablet&quot;: {&quot;left&quot;: &quot;98px&quot;}, &quot;mobile&quot;: {&quot;min-height&quot;: &quot;0px&quot;, &quot;height&quot;: &quot;480px&quot;, &quot;width&quot;: &quot;360px&quot;, &quot;min-width&quot;: &quot;0px&quot;, &quot;left&quot;: &quot;-1px&quot;, &quot;top&quot;: &quot;1537px&quot;}}, &quot;e7&quot;: {&quot;desktop&quot;: {&quot;min-height&quot;: &quot;1772px&quot;}, &quot;tablet&quot;: {}, &quot;mobile&quot;: {&quot;min-height&quot;: &quot;1772px&quot;}}, &quot;e8&quot;: {&quot;desktop&quot;: {&quot;background-color&quot;: &quot;#FFFFFF&quot;, &quot;min-height&quot;: &quot;0px&quot;, &quot;position&quot;: &quot;absolute&quot;, &quot;left&quot;: &quot;318px&quot;, &quot;top&quot;: &quot;2369px&quot;, &quot;width&quot;: &quot;765px&quot;, &quot;margin&quot;: &quot;0&quot;, &quot;z-index&quot;: &quot;20&quot;, &quot;background-image&quot;: &quot;linear-gradient(120deg, #9aa89a, #558271)&quot;}, &quot;tablet&quot;: {&quot;display&quot;: &quot;flex&quot;, &quot;width&quot;: &quot;334px&quot;, &quot;max-width&quot;: &quot;100%&quot;, &quot;margin-left&quot;: &quot;auto&quot;, &quot;margin-right&quot;: &quot;auto&quot;, &quot;position&quot;: &quot;absolute&quot;, &quot;left&quot;: &quot;243px&quot;, &quot;top&quot;: &quot;2323px&quot;, &quot;margin&quot;: &quot;0&quot;, &quot;z-index&quot;: &quot;20&quot;, &quot;background-image&quot;: &quot;linear-gradient(120deg, #9ea9a4, #527f71)&quot;}, &quot;mobile&quot;: {&quot;position&quot;: &quot;absolute&quot;, &quot;left&quot;: &quot;33px&quot;, &quot;top&quot;: &quot;2580px&quot;, &quot;width&quot;: &quot;334px&quot;, &quot;margin&quot;: &quot;0&quot;, &quot;z-index&quot;: &quot;20&quot;, &quot;padding-top&quot;: &quot;50px&quot;, &quot;background-image&quot;: &quot;linear-gradient(120deg, #b5b4b2, #4c7863)&quot;}}, &quot;e9&quot;: {&quot;desktop&quot;: {}, &quot;tablet&quot;: {}, &quot;mobile&quot;: {&quot;min-height&quot;: &quot;735px&quot;}}, &quot;e10&quot;: {&quot;desktop&quot;: {&quot;font-size&quot;: &quot;33px&quot;, &quot;text-align&quot;: &quot;center&quot;}, &quot;tablet&quot;: {}, &quot;mobile&quot;: {}}, &quot;e11&quot;: {&quot;desktop&quot;: {&quot;margin-top&quot;: &quot;0px&quot;, &quot;margin-bottom&quot;: &quot;0px&quot;, &quot;min-height&quot;: &quot;0px&quot;}, &quot;tablet&quot;: {}, &quot;mobile&quot;: {}}, &quot;e12&quot;: {&quot;desktop&quot;: {&quot;justify-content&quot;: &quot;center&quot;, &quot;flex-wrap&quot;: &quot;wrap&quot;}, &quot;tablet&quot;: {&quot;margin-right&quot;: &quot;20px&quot;, &quot;width&quot;: &quot;238px&quot;, &quot;height&quot;: &quot;53px&quot;}, &quot;mobile&quot;: {&quot;padding-top&quot;: &quot;15px&quot;, &quot;margin-left&quot;: &quot;auto&quot;, &quot;display&quot;: &quot;flex&quot;, &quot;width&quot;: &quot;194px&quot;, &quot;max-width&quot;: &quot;100%&quot;, &quot;margin-right&quot;: &quot;auto&quot;}}, &quot;e13&quot;: {&quot;desktop&quot;: {&quot;min-height&quot;: &quot;0px&quot;}, &quot;tablet&quot;: {&quot;min-height&quot;: &quot;0px&quot;}, &quot;mobile&quot;: {&quot;min-height&quot;: &quot;0px&quot;, &quot;height&quot;: &quot;800px&quot;}}, &quot;e14&quot;: {&quot;desktop&quot;: {}, &quot;tablet&quot;: {&quot;transform&quot;: &quot;scale(1)&quot;, &quot;transform-origin&quot;: &quot;top center&quot;}, &quot;mobile&quot;: {}}, &quot;e15&quot;: {&quot;desktop&quot;: {}, &quot;tablet&quot;: {}, &quot;mobile&quot;: {&quot;min-height&quot;: &quot;0px&quot;, &quot;position&quot;: &quot;static&quot;, &quot;height&quot;: &quot;auto&quot;}}}">[data-eid="e1"]{object-fit:cover !important;object-position:20% 49% !important}[data-eid="e2"]{object-fit:cover !important;object-position:69% 50% !important;padding-bottom:0px !important;margin-bottom:50px !important;margin-left:0px !important}[data-eid="e3"]{object-fit:cover !important;object-position:49% 49% !important}[data-eid="e4"]{min-height:0px !important;height:500px !important}[data-eid="e5"]{left:22px !important;top:440px !important;min-height:0px !important}[data-eid="e6"]{min-height:0px !important;position:absolute !important;left:3px !important;top:1203px !important;width:558px !important;margin:0 !important;z-index:20 !important}[data-eid="e7"]{min-height:1772px !important}[data-eid="e8"]{background-color:#FFFFFF !important;min-height:0px !important;position:absolute !important;left:318px !important;top:2369px !important;width:765px !important;margin:0 !important;z-index:20 !important;background-image:linear-gradient(120deg, #9aa89a, #558271) !important}[data-eid="e10"]{font-size:33px !important;text-align:center !important}[data-eid="e11"]{margin-top:0px !important;margin-bottom:0px !important;min-height:0px !important}[data-eid="e12"]{justify-content:center !important;flex-wrap:wrap !important}[data-eid="e13"]{min-height:0px !important}@media (max-width:900px){[data-eid="e6"]{left:98px !important}[data-eid="e8"]{display:flex !important;width:334px !important;max-width:100% !important;margin-left:auto !important;margin-right:auto !important;position:absolute !important;left:243px !important;top:2323px !important;margin:0 !important;z-index:20 !important;background-image:linear-gradient(120deg, #9ea9a4, #527f71) !important}[data-eid="e12"]{margin-right:20px !important;width:238px !important;height:53px !important}[data-eid="e13"]{min-height:0px !important}[data-eid="e14"]{transform:scale(1) !important;transform-origin:top center !important}}@media (max-width:640px){[data-eid="e4"]{object-fit:cover !important;object-position:67% 46% !important}[data-eid="e6"]{min-height:0px !important;height:480px !important;width:360px !important;min-width:0px !important;left:-1px !important;top:1537px !important}[data-eid="e7"]{min-height:1772px !important}[data-eid="e8"]{position:absolute !important;left:33px !important;top:2580px !important;width:334px !important;margin:0 !important;z-index:20 !important;padding-top:50px !important;background-image:linear-gradient(120deg, #b5b4b2, #4c7863) !important}[data-eid="e9"]{min-height:735px !important}[data-eid="e12"]{padding-top:15px !important;margin-left:auto !important;display:flex !important;width:194px !important;max-width:100% !important;margin-right:auto !important}[data-eid="e13"]{min-height:0px !important;height:800px !important}[data-eid="e15"]{min-height:0px !important;position:static !important;height:auto !important}}</style><style></style></head>
 <body data-new-gr-c-s-check-loaded="14.1139.0" data-gr-ext-installed="" data-new-gr-c-s-loaded="14.1139.0">
@@ -1123,45 +1180,73 @@ html[lang="en"] a[data-en], html[lang="de"] a[data-de] { display: inline-flex; }
   </div>
 </section>
 
-<section class="section" data-eid="e7" style="">
-  <div class="wrap" draggable="false">
+<section class="section">
+  <div class="wrap">
     <div class="couples-grid reveal is-visible">
-      <a href="fotografie-hochzeiten-ledi-esler.html" class="couple-tile" draggable="false">
-        <img src="media/extracted/fotografie-hochzeiten-9274c0455047.webp" alt="Ledi &amp; Esler" loading="lazy" draggable="false" data-eid="e1">
+      <a href="fotografie-hochzeiten-ledi-esler.html" class="couple-tile">
+        <img src="media/extracted/fotografie-hochzeiten-9274c0455047.webp" alt="Ledi &amp; Esler" loading="lazy">
         <span class="couple-tile-name">Ledi &amp; Esler</span>
       </a>
-      <a href="fotografie-hochzeiten-irene-tani.html" class="couple-tile" draggable="false">
-        <img src="media/extracted/fotografie-hochzeiten-7b20a8cc3621.webp" alt="Irene &amp; Tani" loading="lazy" draggable="false" data-eid="e2">
+      <a href="fotografie-hochzeiten-irene-tani.html" class="couple-tile">
+        <img src="media/extracted/fotografie-hochzeiten-7b20a8cc3621.webp" alt="Irene &amp; Tani" loading="lazy">
         <span class="couple-tile-name">Irene &amp; Tani</span>
       </a>
-      <a href="fotografie-hochzeiten-Judit-David.html" class="couple-tile" draggable="false">
-        <img src="media/extracted/fotografie-hochzeiten-b1c7b8141a97.webp" alt="Klesta &amp; Erand" loading="lazy" draggable="false" data-eid="e3">
-        <span class="couple-tile-name" draggable="false">Judit &amp; David</span>
-      </a><a href="fotografie-hochzeiten-klesta-erand.html" class="couple-tile" draggable="false" data-eid="e6" style="width: 558px; height: 499px;">
-        <img src="media/extracted/fotografie-hochzeiten-b6f74a9f2129.webp" alt="Klesta &amp; Erand" loading="lazy" draggable="false" data-eid="e4" style="width: 558px;">
-        <span class="couple-tile-name" draggable="false" style="width: 283px; height: 38px;" data-eid="e5">Klesta &amp; Erand</span>
+      <a href="fotografie-hochzeiten-Judit-David.html" class="couple-tile">
+        <img src="media/extracted/fotografie-hochzeiten-Judit-David-b1c7b8141a97.webp" alt="Judit &amp; David" loading="lazy">
+        <span class="couple-tile-name">Judit &amp; David</span>
+      </a>
+      <a href="fotografie-hochzeiten-klesta-erand.html" class="couple-tile">
+        <img src="media/extracted/fotografie-hochzeiten-b6f74a9f2129.webp" alt="Klesta &amp; Erand" loading="lazy">
+        <span class="couple-tile-name">Klesta &amp; Erand</span>
       </a>
     </div>
   </div>
 </section>
 
-<section class="section" draggable="false" data-eid="e9" style="width: 400px; height: 427px;">
+<section class="section">
   <div class="wrap">
-    <div class="cta-band reveal is-visible" draggable="false" data-eid="e8" style="height: 234px;">
-      <p class="cta-band-title" draggable="false" style="width: 384px; height: 139px;" data-eid="e11">
-        <span data-de="" draggable="false" data-eid="e10" style="">Erzählen Sie uns von Ihrem großen Tag.</span>
-        <span data-en="">Tell us about your big day.</span>
-      </p>
-      
-    <a class="btn btn-primary" href="https://wa.me/491785536715" target="_blank" rel="noopener" draggable="false" style="" data-eid="e12">
-        
-      <div data-hescale="wrap" data-eid="e14" style="display: flex; flex-flow: wrap; align-items: center; justify-content: center; gap: 9.12px;"><span data-de="" draggable="false">Jetzt Termin sichern</span><span data-en="">Book a slot now</span></div></a></div>
+    <div class="section-head reveal is-visible">
+      <p class="eyebrow"><span data-de="">Preise</span><span data-en="">Pricing</span></p>
+      <h2 class="section-title"><span data-de="">Pakete für <em>jeden Tag</em>.</span><span data-en="">Packages for <em>every day</em>.</span></h2>
+      <p class="section-lede"><span data-de="">Richtpreise — das genaue Angebot richtet sich nach Ablauf und Wünschen.</span><span data-en="">Indicative prices — the final quote depends on the schedule and your wishes.</span></p>
+    </div>
+    <div class="pricing-grid reveal is-visible">
+      <div class="price-card">
+        <div class="price-card-name"><span data-de="">Kleine Hochzeit</span><span data-en="">Small wedding</span></div>
+        <div class="price-card-amount">890€ <span class="unit"><span data-de="">halbtags</span><span data-en="">half day</span></span></div>
+        <p class="price-card-desc"><span data-de="">Bis 5 Stunden Begleitung, Trauung und Feier, bearbeitete Galerie digital.</span><span data-en="">Up to 5 hours of coverage, ceremony and reception, edited digital gallery.</span></p>
+      </div>
+      <div class="price-card is-highlighted">
+        <div class="price-card-name"><span data-de="">Klassisch</span><span data-en="">Classic</span></div>
+        <div class="price-card-amount">1.490€ <span class="unit"><span data-de="">ganztags</span><span data-en="">full day</span></span></div>
+        <p class="price-card-desc"><span data-de="">Vorbereitung bis Feier, bis 10 Stunden, Highlights innerhalb von 48 Stunden.</span><span data-en="">Getting ready through reception, up to 10 hours, highlights within 48 hours.</span></p>
+      </div>
+      <div class="price-card">
+        <div class="price-card-name"><span data-de="">Premium</span><span data-en="">Premium</span></div>
+        <div class="price-card-amount">2.490€ <span class="unit"><span data-de="">ganztags +</span><span data-en="">full day +</span></span></div>
+        <p class="price-card-desc"><span data-de="">Wie Klassisch, plus Verlobungsshooting und gedrucktes Fotoalbum.</span><span data-en="">Everything in Classic, plus an engagement shoot and a printed photo album.</span></p>
+      </div>
+    </div>
   </div>
 </section>
 
-<footer class="site-footer" draggable="false" data-eid="e13" style="">
-  <div class="wrap" draggable="false">
-    <div class="footer-grid" draggable="false" style="width: 1191px; height: 199px;">
+<section class="section">
+  <div class="wrap">
+    <div class="cta-band reveal is-visible">
+      <p class="cta-band-title">
+        <span data-de="">Erzählen Sie uns von Ihrem großen Tag.</span>
+        <span data-en="">Tell us about your big day.</span>
+      </p>
+      <a class="btn btn-primary" href="https://wa.me/491785536715" target="_blank" rel="noopener">
+        <span data-de="">Jetzt Termin sichern</span><span data-en="">Book a slot now</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
       <div>
         <div class="footer-brand">HEGART</div>
         <p class="footer-tagline">
@@ -1210,11 +1295,14 @@ html[lang="en"] a[data-en], html[lang="de"] a[data-de] { display: inline-flex; }
       </div>
     </div>
 
-    <div class="footer-bottom" draggable="false" data-eid="e15" style="
-   &lt;div data-hescale=" wrap"=""><span>© 2026 Hegart Studio.</span><span data-de="" draggable="false">Alle Rechte vorbehalten.</span><span data-en="">All rights reserved.</span><div class="footer-legal">
-        <a href="impressum.html" draggable="false">Impressum</a>
-        <a href="datenschutz.html" draggable="false">Datenschutzerklärung</a>
-      </div></div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Hegart Studio.</span>
+      <span data-de="">Alle Rechte vorbehalten.</span><span data-en="">All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutzerklärung</a>
+      </div>
+    </div>
   </div>
 </footer>
 
@@ -1360,6 +1448,4 @@ html[lang="en"] a[data-en], html[lang="de"] a[data-de] { display: inline-flex; }
   }
 })();
 </script>
-
-
-<grammarly-desktop-integration data-grammarly-shadow-root="true" style="visibility: visible !important;"></grammarly-desktop-integration></body></html>
+</body></html>

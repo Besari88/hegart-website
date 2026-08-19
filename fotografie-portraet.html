@@ -1077,8 +1077,69 @@ html[lang="en"] a[data-en], html[lang="de"] a[data-de] { display: inline-flex; }
    ============================================================ */
 @media (max-width: 780px) {
   .nav-links { display: none; }
+  .nav-cta { display: none; }
   .nav-burger { display: flex; }
+  .nav.is-nav-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--ink-navy);
+    padding: 1.5rem var(--gutter) 2rem;
+    border-bottom: 1px solid rgba(252, 246, 236, .1);
+  }
+  .nav-burger[aria-expanded="true"] svg line:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .nav-burger[aria-expanded="true"] svg line:nth-child(2) { opacity: 0; }
+  .nav-burger[aria-expanded="true"] svg line:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+  .nav-burger svg line { transition: transform .25s var(--ease-out), opacity .2s; transform-origin: center; }
 }
+
+/* ============================================================
+   PRICING CARDS (service pages)
+   ============================================================ */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+.price-card {
+  border: 1px solid rgba(46, 42, 38, .14);
+  border-radius: 20px;
+  padding: 2.2rem 1.9rem;
+  display: flex;
+  flex-direction: column;
+  transition: border-color .3s, transform .3s;
+}
+.price-card:hover { border-color: rgba(232, 90, 42, .4); transform: translateY(-3px); }
+.price-card.is-highlighted { border-color: var(--coral); background: rgba(232, 90, 42, .04); }
+.price-card-name {
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--coral);
+}
+.price-card-amount {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3vw, 2.4rem);
+  font-weight: 600;
+  margin: .6rem 0;
+}
+.price-card-amount .unit { font-size: .95rem; font-weight: 400; color: rgba(46, 42, 38, .6); }
+.price-card-desc {
+  font-size: .92rem;
+  color: rgba(46, 42, 38, .68);
+  line-height: 1.55;
+  flex-grow: 1;
+}
+.section-dark .price-card { border-color: rgba(252, 246, 236, .16); }
+.section-dark .price-card.is-highlighted { border-color: var(--amber); background: rgba(240, 169, 60, .08); }
+.section-dark .price-card-desc { color: rgba(252, 246, 236, .68); }
+.section-dark .price-card-amount .unit { color: rgba(252, 246, 236, .6); }
 </style>
 <style id="__hegart_edits" data-model="{&quot;e2&quot;: {&quot;desktop&quot;: {&quot;min-height&quot;: &quot;1248px&quot;}, &quot;tablet&quot;: {}, &quot;mobile&quot;: {}}, &quot;e3&quot;: {&quot;desktop&quot;: {&quot;margin-top&quot;: &quot;20px&quot;}, &quot;tablet&quot;: {&quot;margin-top&quot;: &quot;20px&quot;}, &quot;mobile&quot;: {&quot;padding-top&quot;: &quot;0px&quot;}}, &quot;e4&quot;: {&quot;desktop&quot;: {&quot;margin-top&quot;: &quot;20px&quot;}, &quot;tablet&quot;: {}, &quot;mobile&quot;: {}}, &quot;e5&quot;: {&quot;desktop&quot;: {&quot;margin-top&quot;: &quot;20px&quot;}, &quot;tablet&quot;: {}, &quot;mobile&quot;: {}}, &quot;e6&quot;: {&quot;desktop&quot;: {&quot;background-position&quot;: &quot;46% 35%&quot;}, &quot;tablet&quot;: {}, &quot;mobile&quot;: {}}, &quot;e7&quot;: {&quot;desktop&quot;: {&quot;object-fit&quot;: &quot;cover&quot;, &quot;object-position&quot;: &quot;44% 10%&quot;}, &quot;tablet&quot;: {}, &quot;mobile&quot;: {}}, &quot;e8&quot;: {&quot;desktop&quot;: {&quot;object-fit&quot;: &quot;cover&quot;, &quot;object-position&quot;: &quot;42% 48%&quot;}, &quot;tablet&quot;: {}, &quot;mobile&quot;: {}}, &quot;e9&quot;: {&quot;desktop&quot;: {&quot;object-fit&quot;: &quot;cover&quot;, &quot;object-position&quot;: &quot;42% 50%&quot;}, &quot;tablet&quot;: {}, &quot;mobile&quot;: {}}, &quot;e10&quot;: {&quot;desktop&quot;: {&quot;object-fit&quot;: &quot;cover&quot;, &quot;object-position&quot;: &quot;49% 22%&quot;}, &quot;tablet&quot;: {}, &quot;mobile&quot;: {}}, &quot;e11&quot;: {&quot;desktop&quot;: {&quot;object-fit&quot;: &quot;cover&quot;, &quot;object-position&quot;: &quot;49% 4%&quot;}, &quot;tablet&quot;: {}, &quot;mobile&quot;: {}}, &quot;e12&quot;: {&quot;desktop&quot;: {&quot;object-fit&quot;: &quot;cover&quot;, &quot;object-position&quot;: &quot;35% 60%&quot;}, &quot;tablet&quot;: {}, &quot;mobile&quot;: {}}, &quot;e13&quot;: {&quot;desktop&quot;: {&quot;object-fit&quot;: &quot;cover&quot;, &quot;object-position&quot;: &quot;73% 41%&quot;}, &quot;tablet&quot;: {}, &quot;mobile&quot;: {}}, &quot;e14&quot;: {&quot;desktop&quot;: {&quot;object-fit&quot;: &quot;cover&quot;, &quot;object-position&quot;: &quot;34% 55%&quot;}, &quot;tablet&quot;: {}, &quot;mobile&quot;: {}}, &quot;e15&quot;: {&quot;desktop&quot;: {&quot;background-image&quot;: &quot;linear-gradient(120deg, #ffffff, #ffffff)&quot;}, &quot;tablet&quot;: {}, &quot;mobile&quot;: {}}}">[data-eid="e2"]{min-height:1248px !important}[data-eid="e3"]{margin-top:20px !important}[data-eid="e4"]{margin-top:20px !important}[data-eid="e5"]{margin-top:20px !important}[data-eid="e6"]{background-position:46% 35% !important}[data-eid="e7"]{object-fit:cover !important;object-position:44% 10% !important}[data-eid="e8"]{object-fit:cover !important;object-position:42% 48% !important}[data-eid="e9"]{object-fit:cover !important;object-position:42% 50% !important}[data-eid="e10"]{object-fit:cover !important;object-position:49% 22% !important}[data-eid="e11"]{object-fit:cover !important;object-position:49% 4% !important}[data-eid="e12"]{object-fit:cover !important;object-position:35% 60% !important}[data-eid="e13"]{object-fit:cover !important;object-position:73% 41% !important}[data-eid="e14"]{object-fit:cover !important;object-position:34% 55% !important}[data-eid="e15"]{background-image:linear-gradient(120deg, #ffffff, #ffffff) !important}@media (max-width:900px){[data-eid="e3"]{margin-top:20px !important}}@media (max-width:640px){[data-eid="e3"]{padding-top:0px !important}}</style></head>
 <body>
@@ -1147,6 +1208,32 @@ html[lang="en"] a[data-en], html[lang="de"] a[data-de] { display: inline-flex; }
       <div class="gallery-item" draggable="false"><img src="media/extracted/fotografie-portraet-f9f3e437394f.webp" alt="Porträt" loading="lazy" draggable="false"></div>
       <div class="gallery-item is-offset" draggable="false"><img src="media/extracted/fotografie-portraet-e862a0115267.webp" alt="Porträt" loading="lazy" draggable="false"></div>
     </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal is-visible">
+      <p class="eyebrow"><span data-de="">Preise</span><span data-en="">Pricing</span></p>
+      <h2 class="section-title"><span data-de="">Pakete für <em>jeden Anlass</em>.</span><span data-en="">Packages for <em>every occasion</em>.</span></h2>
+      <p class="section-lede"><span data-de="">Richtpreise — das genaue Angebot richtet sich nach Umfang und Ort.</span><span data-en="">Indicative prices — the final quote depends on scope and location.</span></p>
+    </div>
+    <div class="pricing-grid reveal is-visible">
+      <div class="price-card">
+        <div class="price-card-name"><span data-de="">Einzelportrait</span><span data-en="">Single portrait</span></div>
+        <div class="price-card-amount">ab 89€ <span class="unit"><span data-de="">/ Person</span><span data-en="">/ person</span></span></div>
+        <p class="price-card-desc"><span data-de="">Portrait im Studio oder vor Ort, 3 bearbeitete Bilder.</span><span data-en="">Studio or on-location portrait, 3 edited images.</span></p>
+      </div>
+      <div class="price-card is-highlighted">
+        <div class="price-card-name"><span data-de="">Familie & Paare</span><span data-en="">Family & couples</span></div>
+        <div class="price-card-amount">179€ <span class="unit"><span data-de="">/ Shooting</span><span data-en="">/ shoot</span></span></div>
+        <p class="price-card-desc"><span data-de="">Bis 90 Minuten, 8 bearbeitete Bilder, Studio oder Location Ihrer Wahl.</span><span data-en="">Up to 90 minutes, 8 edited images, studio or a location of your choice.</span></p>
+      </div>
+    </div>
+    <p class="section-lede" style="margin-top:1.5rem;">
+      <span data-de="">Auf der Suche nach Pass-, Visa- oder Bewerbungsfotos? <a href="passfotografie.html" style="color:var(--coral); text-decoration:underline;">Hier entlang</a>.</span>
+      <span data-en="">Looking for passport, visa or application photos? <a href="passfotografie.html" style="color:var(--coral); text-decoration:underline;">Right this way</a>.</span>
+    </p>
   </div>
 </section>
 

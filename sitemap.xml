@@ -21,17 +21,17 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hegart.de/fotografie-event.html</loc>
+    <loc>https://hegart.de/eventfotografie.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hegart.de/fotografie-corporate.html</loc>
+    <loc>https://hegart.de/corporatefotografie.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hegart.de/fotografie-produkt.html</loc>
+    <loc>https://hegart.de/produktfotografie.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -46,7 +46,17 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hegart.de/fotografie-architektur.html</loc>
+    <loc>https://hegart.de/passfotografie.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hegart.de/immobilienfotografie.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hegart.de/gastronomiefotografie.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
