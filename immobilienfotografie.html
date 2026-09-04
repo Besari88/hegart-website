@@ -6,45 +6,75 @@
 <link rel="icon" href="media/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="media/favicon-180.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Immobilienfotografie in Singen — Architektur & Objektfotos</title>
-<meta name="description" content="Architektur- und Immobilienfotografie in Singen, Radolfzell und Konstanz. Innen, außen und auf Wunsch mit Drohne.">
+<title>Immobilienfotografie Singen & Bodensee — Fotos, Drohne, 360° | Hegart Studio</title>
+<meta name="description" content="Immobilienfotografie in Singen, Radolfzell und Konstanz: Innen- und Außenaufnahmen, Drohne und 360°-Rundgang zum Festpreis ab 199 €. Lieferung in 48 Stunden, Nutzungsrechte inklusive.">
 <link rel="canonical" href="https://hegart.de/immobilienfotografie.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Hegart Studio">
-<meta property="og:title" content="Immobilienfotografie in Singen — Architektur & Objektfotos">
-<meta property="og:description" content="Architektur- und Immobilienfotografie in Singen, Radolfzell und Konstanz. Innen, außen und auf Wunsch mit Drohne.">
+<meta property="og:title" content="Immobilienfotografie Singen & Bodensee — Fotos, Drohne, 360° | Hegart Studio">
+<meta property="og:description" content="Innen- und Außenaufnahmen, Drohne und 360°-Rundgang zum Festpreis ab 199 €. Lieferung in 48 Stunden, Nutzungsrechte inklusive.">
 <meta property="og:url" content="https://hegart.de/immobilienfotografie.html">
-<meta property="og:image" content="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1200&q=70&auto=format&fit=crop">
+<meta property="og:image" content="https://images.unsplash.com/photo-1600585153490-76fb20a32601?w=1200&q=70&auto=format&fit=crop">
 <meta property="og:locale" content="de_DE">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="css/styles.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Immobilien- und Architekturfotografie",
-  "description": "Architektur- und Immobilienfotografie in Singen, Radolfzell und Konstanz. Innen, außen und auf Wunsch mit Drohne.",
-  "serviceType": "Immobilienfotografie",
-  "areaServed": [
-    "Singen",
-    "Radolfzell",
-    "Konstanz",
-    "Bodensee"
-  ],
-  "url": "https://hegart.de/immobilienfotografie.html",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "Hegart Studio",
-    "telephone": "+491785536715",
-    "email": "info@hegart.de",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Thurgauerstraße 5",
-      "postalCode": "78224",
-      "addressLocality": "Singen (Hohentwiel)",
-      "addressCountry": "DE"
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://hegart.de/immobilienfotografie.html#service",
+      "name": "Immobilienfotografie",
+      "serviceType": "Immobilienfotografie",
+      "description": "Immobilienfotografie in Singen, Radolfzell und Konstanz: Innen- und Außenaufnahmen, Drohne und 360°-Rundgang zum Festpreis. Lieferung in 48 Stunden, Nutzungsrechte inklusive.",
+      "url": "https://hegart.de/immobilienfotografie.html",
+      "areaServed": ["Singen (Hohentwiel)", "Radolfzell", "Konstanz", "Stockach", "Engen", "Hegau", "Bodensee"],
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://hegart.de/#business",
+        "name": "Hegart Studio",
+        "url": "https://hegart.de/",
+        "telephone": "+491785536715",
+        "email": "info@hegart.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Thurgauerstraße 5",
+          "postalCode": "78224",
+          "addressLocality": "Singen (Hohentwiel)",
+          "addressCountry": "DE"
+        }
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Pakete Immobilienfotografie",
+        "itemListElement": [
+          { "@type": "Offer", "name": "Basis-Paket", "description": "Bis 10 Bilder, innen und außen", "price": "199", "priceCurrency": "EUR" },
+          { "@type": "Offer", "name": "Komplett-Paket", "description": "Bis 20 Bilder inkl. Drohne", "price": "349", "priceCurrency": "EUR" },
+          { "@type": "Offer", "name": "360°-Rundgang", "description": "Virtueller Rundgang als Ergänzung", "price": "149", "priceCurrency": "EUR" }
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hegart.de/" },
+        { "@type": "ListItem", "position": 2, "name": "Fotografie", "item": "https://hegart.de/fotografie.html" },
+        { "@type": "ListItem", "position": 3, "name": "Immobilienfotografie", "item": "https://hegart.de/immobilienfotografie.html" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Sind Drohnenaufnahmen möglich?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Luftaufnahmen sind im Komplett-Paket enthalten und einzeln buchbar. Ob ein Flug am Objekt erlaubt ist, prüfen wir vorab." } },
+        { "@type": "Question", "name": "Wie schnell sind die Bilder nutzbar?", "acceptedAnswer": { "@type": "Answer", "text": "In der Regel innerhalb von 48 Stunden nach dem Termin, als Download-Link in Web- und Druckauflösung." } },
+        { "@type": "Question", "name": "Darf ich die Bilder überall verwenden?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Alle Pakete enthalten die Nutzungsrechte für Exposé, Immobilienportale, Ihre Website und Social Media ohne Zusatzkosten." } },
+        { "@type": "Question", "name": "Welches Gebiet decken Sie ab?", "acceptedAnswer": { "@type": "Answer", "text": "Singen, Radolfzell, Konstanz, Stockach, Engen, den Hegau und den Bodensee. Innerhalb von 30 km um Singen ohne Anfahrtspauschale." } },
+        { "@type": "Question", "name": "Fotografieren Sie auch bewohnte Objekte?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Sie erhalten vorab eine kurze Vorbereitungs-Checkliste, den Termin stimmen wir mit Eigentümer oder Mietern ab." } },
+        { "@type": "Question", "name": "Wie funktioniert der 360°-Rundgang?", "acceptedAnswer": { "@type": "Answer", "text": "Wir fotografieren jeden Raum als Panorama und liefern einen Link, den Sie in Exposé, Portal oder Website einbetten. Kein Abo, keine laufenden Kosten." } }
+      ]
     }
-  }
+  ]
 }
 </script>
 </head>
@@ -77,145 +107,360 @@
   </div>
 </header>
 
-<section class="page-hero" style="min-height:52vh; --hero-bg-img:url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1920&q=70&auto=format&fit=crop')">
+<section class="page-hero" style="min-height:58vh; --hero-bg-img:url('https://images.unsplash.com/photo-1600585153490-76fb20a32601?w=1920&q=70&auto=format&fit=crop')">
   <div class="hero-bg-photo"></div>
   <div class="hero-glow"></div>
   <div class="wrap page-hero-inner">
-    <p class="page-hero-crumb fade-up-in"><a href="index.html">Home</a> / <a href="fotografie.html"><span data-de>Fotografie</span><span data-en>Photography</span></a> / Architektur & Immobilien</p>
-    <h1 class="page-hero-title fade-up-in fade-up-in-1">Architektur & Immobilien</h1>
-    <p class="page-hero-sub fade-up-in fade-up-in-2"><span data-de>Objekte, die auffallen — professionelle Fotos für schnellere Vermarktung.</span><span data-en>Properties that stand out — professional photos for faster marketing.</span></p>
+    <p class="page-hero-crumb fade-up-in"><a href="index.html">Home</a> / <a href="fotografie.html"><span data-de>Fotografie</span><span data-en>Photography</span></a> / <span data-de>Immobilienfotografie</span><span data-en>Real estate photography</span></p>
+    <h1 class="page-hero-title fade-up-in fade-up-in-1">
+      <span data-de>Immobilien&shy;fotografie <em class="accent">Singen &amp; Bodensee</em>.</span>
+      <span data-en>Real estate photography <em class="accent">Singen &amp; Lake Constance</em>.</span>
+    </h1>
+    <p class="page-hero-sub fade-up-in fade-up-in-2">
+      <span data-de>Schwache Fotos kosten Besichtigungen. Wir liefern Innen- und Außenaufnahmen, Drohne und 360°-Rundgang zum Festpreis — fertig in 48 Stunden.</span>
+      <span data-en>Weak photos cost you viewings. We deliver interior and exterior shots, drone and 360° tour at a fixed price — ready in 48 hours.</span>
+    </p>
     <div class="page-hero-actions fade-up-in fade-up-in-3">
-      <a class="btn btn-primary" href="https://wa.me/491785536715" target="_blank" rel="noopener">
-        <span data-de>Termin anfragen</span><span data-en>Enquire now</span>
+      <a class="btn btn-primary" href="#anfrage">
+        <span data-de>Angebot anfragen</span><span data-en>Request a quote</span>
+      </a>
+      <a class="btn btn-ghost" href="#beispiel">
+        <span data-de>Beispiel-Exposé ansehen</span><span data-en>See a sample listing</span>
       </a>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="preise">
   <div class="wrap">
-    <div class="section-head reveal is-visible">
-      <p class="eyebrow"><span data-de>Portfolio</span><span data-en>Portfolio</span></p>
-      <h2 class="section-title"><span data-de>Beispiele aus dem <em>Studio</em>.</span><span data-en>Examples from the <em>studio</em>.</span></h2>
-    </div>
-    <div class="gallery-grid reveal is-visible">
-      <div class="gallery-item is-wide"><img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1200&q=65&auto=format&fit=crop" alt="Architektur & Immobilienfotografie" loading="lazy"></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1449247709967-d4461a6a6103?w=700&q=65&auto=format&fit=crop" alt="Architektur & Immobilienfotografie" loading="lazy"></div>
-      <div class="gallery-item is-offset"><img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=700&q=65&auto=format&fit=crop" alt="Architektur & Immobilienfotografie" loading="lazy"></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=700&q=65&auto=format&fit=crop" alt="Architektur & Immobilienfotografie" loading="lazy"></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&q=65&auto=format&fit=crop" alt="Architektur & Immobilienfotografie" loading="lazy"></div>
-      <div class="gallery-item is-offset"><img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=700&q=65&auto=format&fit=crop" alt="Architektur & Immobilienfotografie" loading="lazy"></div>
-    </div>
-  </div>
-</section>
-
-<section class="section section-dark">
-  <div class="wrap">
-    <div class="section-head reveal is-visible">
-      <p class="eyebrow"><span data-de>Ablauf</span><span data-en>Process</span></p>
-      <h2 class="section-title"><span data-de>So läuft's <em>ab</em>.</span><span data-en>How it <em>works</em>.</span></h2>
-    </div>
-    <div class="feature-grid">
-      <div class="reveal is-visible">
-        <div class="feature-item-num">01</div>
-        <h3 class="feature-item-title"><span data-de>Terminabsprache</span><span data-en>Booking</span></h3>
-        <p class="feature-item-text">
-          <span data-de>Mit Eigentümer oder Makler einen passenden Termin finden.</span>
-          <span data-en>We find a suitable date with the owner or estate agent.</span>
-        </p>
-      </div>
-      <div class="reveal reveal-delay-1 is-visible">
-        <div class="feature-item-num">02</div>
-        <h3 class="feature-item-title"><span data-de>Shooting</span><span data-en>Shoot</span></h3>
-        <p class="feature-item-text">
-          <span data-de>60–90 Minuten vor Ort, innen und außen, auf Wunsch mit Drohne.</span>
-          <span data-en>60–90 minutes on site, interior and exterior, drone on request.</span>
-        </p>
-      </div>
-      <div class="reveal reveal-delay-2 is-visible">
-        <div class="feature-item-num">03</div>
-        <h3 class="feature-item-title"><span data-de>Bearbeitung</span><span data-en>Editing</span></h3>
-        <p class="feature-item-text">
-          <span data-de>Perspektivkorrektur, HDR und farbechte Nachbearbeitung.</span>
-          <span data-en>Perspective correction, HDR and color-accurate editing.</span>
-        </p>
-      </div>
-      <div class="reveal reveal-delay-3 is-visible">
-        <div class="feature-item-num">04</div>
-        <h3 class="feature-item-title"><span data-de>Lieferung</span><span data-en>Delivery</span></h3>
-        <p class="feature-item-text">
-          <span data-de>Bildpaket innerhalb von 24–48 Stunden, bereit für das Exposé.</span>
-          <span data-en>Image package delivered within 24–48 hours, ready for the listing.</span>
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap">
-    <div class="section-head reveal is-visible">
+    <div class="section-head reveal">
       <p class="eyebrow"><span data-de>Preise</span><span data-en>Pricing</span></p>
-      <h2 class="section-title"><span data-de>Pakete für <em>jedes Objekt</em>.</span><span data-en>Packages for <em>every property</em>.</span></h2>
-      <p class="section-lede"><span data-de>Richtpreise — das genaue Angebot richtet sich nach Umfang und Aufwand.</span><span data-en>Indicative prices — the final quote depends on scope and effort.</span></p>
+      <h2 class="section-title"><span data-de>Festpreise. <em>Keine Überraschungen.</em></span><span data-en>Fixed prices. <em>No surprises.</em></span></h2>
+      <p class="section-lede">
+        <span data-de>Alle Pakete inklusive Bearbeitung, Nutzungsrechten und Lieferung in Web- und Druckauflösung. Anfahrt bis 30 km um Singen inklusive.</span>
+        <span data-en>All packages include editing, usage rights and delivery in web and print resolution. Travel within 30 km of Singen included.</span>
+      </p>
+      <div class="audience-chips">
+        <span><span data-de>Makler</span><span data-en>Estate agents</span></span>
+        <span><span data-de>Eigentümer</span><span data-en>Owners</span></span>
+        <span><span data-de>Bauträger</span><span data-en>Developers</span></span>
+        <span><span data-de>Ferienwohnungen</span><span data-en>Holiday lets</span></span>
+        <span><span data-de>Hausverwaltungen</span><span data-en>Property managers</span></span>
+      </div>
     </div>
-    <div class="pricing-grid reveal is-visible">
+    <div class="pricing-grid reveal">
       <div class="price-card">
         <div class="price-card-name"><span data-de>Basis-Paket</span><span data-en>Basic package</span></div>
         <div class="price-card-amount">199€ <span class="unit"><span data-de>bis 10 Bilder</span><span data-en>up to 10 images</span></span></div>
-        <p class="price-card-desc"><span data-de>Innen- und Außenaufnahmen für das Standard-Exposé.</span><span data-en>Interior and exterior shots for a standard listing.</span></p>
+        <p class="price-card-desc"><span data-de>Für Wohnungen und kleinere Objekte — alles, was ein Standard-Exposé braucht.</span><span data-en>For apartments and smaller properties — everything a standard listing needs.</span></p>
+        <ul class="price-card-list">
+          <li><span data-de>Innen- und Außenaufnahmen</span><span data-en>Interior and exterior shots</span></li>
+          <li><span data-de>Perspektivkorrektur &amp; HDR-Belichtung</span><span data-en>Perspective correction &amp; HDR exposure</span></li>
+          <li><span data-de>Lieferung innerhalb von 48 Stunden</span><span data-en>Delivery within 48 hours</span></li>
+          <li><span data-de>Nutzungsrechte für Exposé, Portale, Web</span><span data-en>Usage rights for listing, portals, web</span></li>
+        </ul>
+        <a class="btn btn-primary" href="#anfrage"><span data-de>Basis anfragen</span><span data-en>Request Basic</span></a>
       </div>
       <div class="price-card is-highlighted">
-        <div class="price-card-name"><span data-de>Komplett-Paket</span><span data-en>Complete package</span></div>
+        <div class="price-card-name"><span data-de>Komplett-Paket</span><span data-en>Complete package</span><span class="price-card-tag"><span data-de>Beliebt</span><span data-en>Popular</span></span></div>
         <div class="price-card-amount">349€ <span class="unit"><span data-de>bis 20 Bilder + Drohne</span><span data-en>up to 20 images + drone</span></span></div>
-        <p class="price-card-desc"><span data-de>Erweiterte Bildauswahl inklusive Luftaufnahmen.</span><span data-en>Extended image selection including aerial shots.</span></p>
+        <p class="price-card-desc"><span data-de>Für Häuser und Objekte, die aus der Masse herausstechen sollen.</span><span data-en>For houses and properties that need to stand out.</span></p>
+        <ul class="price-card-list">
+          <li><span data-de>Alles aus dem Basis-Paket</span><span data-en>Everything in Basic</span></li>
+          <li><span data-de>Luftaufnahmen mit Drohne</span><span data-en>Aerial shots by drone</span></li>
+          <li><span data-de>Eine Dämmerungsaufnahme (Blaue Stunde)</span><span data-en>One twilight shot (blue hour)</span></li>
+          <li><span data-de>Grundriss-Aufbereitung aus Ihrer Vorlage</span><span data-en>Floor plan clean-up from your template</span></li>
+        </ul>
+        <a class="btn btn-primary" href="#anfrage"><span data-de>Komplett anfragen</span><span data-en>Request Complete</span></a>
       </div>
       <div class="price-card">
-        <div class="price-card-name"><span data-de>Virtueller Rundgang</span><span data-en>Virtual tour</span></div>
-        <div class="price-card-amount">auf Anfrage <span class="unit"><span data-de></span><span data-en></span></span></div>
-        <p class="price-card-desc"><span data-de>360°-Rundgang für die Online-Vermarktung.</span><span data-en>360° walkthrough for online marketing.</span></p>
+        <div class="price-card-name"><span data-de>360°-Rundgang</span><span data-en>360° tour</span></div>
+        <div class="price-card-amount">ab 149€ <span class="unit"><span data-de>bis 5 Räume</span><span data-en>up to 5 rooms</span></span></div>
+        <p class="price-card-desc"><span data-de>Als Ergänzung zu jedem Paket — Interessenten besichtigen online, bevor sie anrufen.</span><span data-en>Add-on to any package — prospects tour online before they call.</span></p>
+        <ul class="price-card-list">
+          <li><span data-de>Panorama je Raum, verlinkt</span><span data-en>One panorama per room, linked</span></li>
+          <li><span data-de>Einbettbar in Exposé, Portal, Website</span><span data-en>Embeddable in listing, portal, website</span></li>
+          <li><span data-de>Kein Abo, keine laufenden Kosten</span><span data-en>No subscription, no running costs</span></li>
+          <li><span data-de>Jeder weitere Raum +20€</span><span data-en>Each additional room +€20</span></li>
+        </ul>
+        <a class="btn btn-primary" href="#anfrage"><span data-de>Rundgang anfragen</span><span data-en>Request a tour</span></a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section-dark">
+<section class="section section-dark" id="galerie">
   <div class="wrap">
-    <div class="section-head reveal is-visible">
+    <div class="section-head reveal">
+      <p class="eyebrow"><span data-de>Portfolio</span><span data-en>Portfolio</span></p>
+      <h2 class="section-title"><span data-de>Objekte, die <em>auffallen</em>.</span><span data-en>Properties that <em>stand out</em>.</span></h2>
+    </div>
+    <!-- TODO: Platzhalter (Unsplash) durch echte Hegart-Aufnahmen ersetzen — 6–8 Bilder reichen. -->
+    <div class="gallery-grid reveal">
+      <div class="gallery-item is-wide"><img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1200&q=65&auto=format&fit=crop" alt="Einfamilienhaus bei Dämmerung, Außenaufnahme" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=700&q=65&auto=format&fit=crop" alt="Wohnzimmer mit Tageslicht, Innenaufnahme" loading="lazy"></div>
+      <div class="gallery-item is-offset"><img src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=700&q=65&auto=format&fit=crop" alt="Essbereich mit Erker, Innenaufnahme" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=700&q=65&auto=format&fit=crop" alt="Villa mit Pool, Außenaufnahme" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=700&q=65&auto=format&fit=crop" alt="Badezimmer, Innenaufnahme" loading="lazy"></div>
+      <div class="gallery-item is-offset"><img src="https://images.unsplash.com/photo-1604014237800-1c9102c219da?w=700&q=65&auto=format&fit=crop" alt="Terrasse und Wohnbereich, Innen-Außen" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="ablauf">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow"><span data-de>Ablauf</span><span data-en>Process</span></p>
+      <h2 class="section-title"><span data-de>Vom Anruf zum Exposé in <em>vier Schritten</em>.</span><span data-en>From call to listing in <em>four steps</em>.</span></h2>
+    </div>
+    <div class="feature-grid">
+      <div class="reveal">
+        <div class="feature-item-num">01</div>
+        <h3 class="feature-item-title"><span data-de>Anfrage &amp; Termin</span><span data-en>Enquiry &amp; booking</span></h3>
+        <p class="feature-item-text">
+          <span data-de>Sie schicken Adresse und Objektart, wir antworten innerhalb eines Werktages mit Termin und Festpreis.</span>
+          <span data-en>Send us the address and property type; we reply within one business day with a date and fixed price.</span>
+        </p>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="feature-item-num">02</div>
+        <h3 class="feature-item-title"><span data-de>Vorbereitung</span><span data-en>Preparation</span></h3>
+        <p class="feature-item-text">
+          <span data-de>Sie erhalten vorab eine kurze Checkliste — aufgeräumte Räume, Licht an, Rollos hoch. Das macht den Unterschied.</span>
+          <span data-en>You get a short checklist in advance — tidy rooms, lights on, blinds up. That makes the difference.</span>
+        </p>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="feature-item-num">03</div>
+        <h3 class="feature-item-title"><span data-de>Shooting vor Ort</span><span data-en>On-site shoot</span></h3>
+        <p class="feature-item-text">
+          <span data-de>60–90 Minuten, innen und außen. Drohne und 360°-Panoramen je nach Paket.</span>
+          <span data-en>60–90 minutes, interior and exterior. Drone and 360° panoramas depending on the package.</span>
+        </p>
+      </div>
+      <div class="reveal reveal-delay-3">
+        <div class="feature-item-num">04</div>
+        <h3 class="feature-item-title"><span data-de>Lieferung in 48 h</span><span data-en>Delivery in 48 h</span></h3>
+        <p class="feature-item-text">
+          <span data-de>Perspektivkorrektur, HDR, Farbabgleich — dann Download-Link in Web- und Druckauflösung, bereit fürs Portal.</span>
+          <span data-en>Perspective correction, HDR, colour balance — then a download link in web and print resolution, ready for the portal.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark" id="vorher-nachher">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow"><span data-de>Vorher / Nachher</span><span data-en>Before / after</span></p>
+      <h2 class="section-title"><span data-de>Der Unterschied, den <em>Interessenten sehen</em>.</span><span data-en>The difference <em>prospects see</em>.</span></h2>
+      <p class="section-lede"><span data-de>Ziehen Sie den Regler: links das Handyfoto, rechts die bearbeitete Aufnahme.</span><span data-en>Drag the slider: phone snapshot on the left, edited shot on the right.</span></p>
+    </div>
+    <!-- TODO: echtes Vorher/Nachher-Paar einsetzen. Bis dahin wird dasselbe Bild links per CSS-Filter (.is-sim) "verschlechtert". -->
+    <div class="ba-compare reveal">
+      <img class="ba-after" src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=1400&q=70&auto=format&fit=crop" alt="Wohnzimmer nach professioneller Bearbeitung">
+      <img class="ba-before is-sim" src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=1400&q=70&auto=format&fit=crop" alt="Wohnzimmer vor der Bearbeitung">
+      <span class="ba-label is-before"><span data-de>Vorher</span><span data-en>Before</span></span>
+      <span class="ba-label is-after"><span data-de>Nachher</span><span data-en>After</span></span>
+      <div class="ba-handle"><div class="ba-handle-knob"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 3 12 9 18"/><polyline points="15 6 21 12 15 18"/></svg></div></div>
+      <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Vorher/Nachher Vergleich">
+    </div>
+    <p class="ba-caption"><span data-de>Perspektivkorrektur, HDR-Belichtung, Weißabgleich, Fensterdurchsicht.</span><span data-en>Perspective correction, HDR exposure, white balance, window pull.</span></p>
+  </div>
+</section>
+
+<section class="section" id="beispiel">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow"><span data-de>Musterobjekt</span><span data-en>Sample property</span></p>
+      <h2 class="section-title"><span data-de>So sieht ein fertiges <em>Exposé-Paket</em> aus.</span><span data-en>What a finished <em>listing package</em> looks like.</span></h2>
+      <p class="section-lede"><span data-de>Fotos, Luftaufnahme, Grundriss und 360°-Rundgang — alles aus einer Hand, alles im selben Look.</span><span data-en>Photos, aerial shot, floor plan and 360° tour — one provider, one consistent look.</span></p>
+    </div>
+    <!-- TODO: Musterobjekt mit echtem Objekt ersetzen (Fotos, Grundriss, eigenes Panorama). Panorama ist aktuell die Pannellum-Demo. -->
+    <div class="expose-grid reveal">
+      <div class="expose-tile is-wide">
+        <span class="expose-tile-tag"><span data-de>Außen · Drohne</span><span data-en>Exterior · drone</span></span>
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=65&auto=format&fit=crop" alt="Musterobjekt: Außenansicht mit Garten" loading="lazy">
+      </div>
+      <div class="expose-tile">
+        <span class="expose-tile-tag"><span data-de>Wohnen</span><span data-en>Living</span></span>
+        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=700&q=65&auto=format&fit=crop" alt="Musterobjekt: Wohnzimmer" loading="lazy">
+      </div>
+      <div class="expose-tile">
+        <span class="expose-tile-tag"><span data-de>Küche</span><span data-en>Kitchen</span></span>
+        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=700&q=65&auto=format&fit=crop" alt="Musterobjekt: Küche" loading="lazy">
+      </div>
+      <div class="expose-tile">
+        <span class="expose-tile-tag"><span data-de>Detail</span><span data-en>Detail</span></span>
+        <img src="https://images.unsplash.com/photo-1600585154084-4e5fe7c39198?w=700&q=65&auto=format&fit=crop" alt="Musterobjekt: Wohnbereich Detail" loading="lazy">
+      </div>
+      <div class="expose-tile expose-plan">
+        <span class="expose-tile-tag"><span data-de>Grundriss</span><span data-en>Floor plan</span></span>
+        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Beispiel-Grundriss einer 3-Zimmer-Wohnung">
+          <g fill="rgba(5,137,194,.07)" stroke="#0D1B2E" stroke-width="2.5" stroke-linejoin="round">
+            <rect x="20" y="40" width="220" height="150"/>
+            <rect x="240" y="40" width="140" height="90"/>
+            <rect x="240" y="130" width="140" height="60"/>
+            <rect x="20" y="190" width="120" height="90"/>
+            <rect x="140" y="190" width="240" height="90"/>
+          </g>
+          <g stroke="#FCF6EC" stroke-width="5" stroke-linecap="round">
+            <line x1="240" y1="90" x2="240" y2="120"/>
+            <line x1="240" y1="150" x2="240" y2="175"/>
+            <line x1="60" y1="190" x2="95" y2="190"/>
+            <line x1="180" y1="190" x2="215" y2="190"/>
+            <line x1="140" y1="215" x2="140" y2="250"/>
+          </g>
+          <g fill="none" stroke="#0589c2" stroke-width="1.5">
+            <path d="M240 90 A30 30 0 0 0 210 120"/>
+            <path d="M60 190 A35 35 0 0 1 95 225"/>
+            <path d="M180 190 A35 35 0 0 1 215 225"/>
+          </g>
+          <g fill="#0D1B2E" font-family="'JetBrains Mono', monospace" font-size="11" letter-spacing=".04em">
+            <text x="32" y="60">WOHNEN / ESSEN</text><text x="32" y="76" fill="#0589c2">32 m²</text>
+            <text x="252" y="60">KÜCHE</text><text x="252" y="76" fill="#0589c2">12 m²</text>
+            <text x="252" y="150">BAD</text><text x="252" y="166" fill="#0589c2">6 m²</text>
+            <text x="32" y="210">FLUR</text><text x="32" y="226" fill="#0589c2">8 m²</text>
+            <text x="152" y="210">SCHLAFEN</text><text x="152" y="226" fill="#0589c2">16 m²</text>
+            <text x="380" y="296" font-size="9" text-anchor="end" fill="rgba(46,42,38,.55)">EG · 74 m² · BEISPIEL</text>
+          </g>
+        </svg>
+      </div>
+      <div class="tour-box">
+        <img class="tour-poster" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1400&q=60&auto=format&fit=crop" alt="" loading="lazy">
+        <div class="tour-viewer"></div>
+        <div class="tour-box-cta">
+          <small><span data-de>360°-Rundgang</span><span data-en>360° tour</span></small>
+          <p><span data-de>Interessenten besichtigen online — vor dem ersten Anruf.</span><span data-en>Prospects tour online — before the first call.</span></p>
+          <button type="button" class="btn btn-primary" data-tour-load data-panorama="https://pannellum.org/images/alma.jpg">
+            <span data-de>Rundgang starten</span><span data-en>Start the tour</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="expose-includes reveal">
+      <span><span data-de>20 Fotos innen &amp; außen</span><span data-en>20 photos interior &amp; exterior</span></span>
+      <span><span data-de>Luftaufnahmen</span><span data-en>Aerial shots</span></span>
+      <span><span data-de>Grundriss</span><span data-en>Floor plan</span></span>
+      <span><span data-de>360°-Rundgang</span><span data-en>360° tour</span></span>
+      <span><span data-de>Web- &amp; Druckauflösung</span><span data-en>Web &amp; print resolution</span></span>
+      <span><span data-de>Nutzungsrechte inklusive</span><span data-en>Usage rights included</span></span>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark" id="faq">
+  <div class="wrap">
+    <div class="section-head reveal">
       <p class="eyebrow">FAQ</p>
       <h2 class="section-title"><span data-de>Häufige <em>Fragen</em>.</span><span data-en>Frequently asked <em>questions</em>.</span></h2>
     </div>
-    <div class="faq-list reveal is-visible">
+    <div class="faq-list reveal">
       <div class="faq-item">
         <h3 class="faq-q"><span data-de>Sind Drohnenaufnahmen möglich?</span><span data-en>Are drone shots possible?</span></h3>
-        <p class="faq-a"><span data-de>Ja, auf Anfrage im Komplett-Paket oder einzeln buchbar.</span><span data-en>Yes, on request as part of the complete package or bookable separately.</span></p>
+        <p class="faq-a"><span data-de>Ja. Luftaufnahmen sind im Komplett-Paket enthalten und einzeln buchbar. Ob ein Flug am Objekt erlaubt ist, prüfen wir vorab.</span><span data-en>Yes. Aerial shots are included in the Complete package and bookable separately. We check in advance whether flying is permitted at the property.</span></p>
       </div>
       <div class="faq-item">
         <h3 class="faq-q"><span data-de>Wie schnell sind die Bilder nutzbar?</span><span data-en>How soon are the images usable?</span></h3>
-        <p class="faq-a"><span data-de>In der Regel innerhalb von 24–48 Stunden nach dem Termin.</span><span data-en>Usually within 24–48 hours after the shoot.</span></p>
+        <p class="faq-a"><span data-de>In der Regel innerhalb von 48 Stunden nach dem Termin — als Download-Link in Web- und Druckauflösung.</span><span data-en>Usually within 48 hours after the shoot — as a download link in web and print resolution.</span></p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q"><span data-de>Darf ich die Bilder überall verwenden?</span><span data-en>Can I use the images anywhere?</span></h3>
+        <p class="faq-a"><span data-de>Ja. Alle Pakete enthalten die Nutzungsrechte für Exposé, Immobilienportale, Ihre Website und Social Media — ohne Zusatzkosten.</span><span data-en>Yes. All packages include usage rights for listings, property portals, your website and social media — at no extra cost.</span></p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q"><span data-de>Welches Gebiet decken Sie ab?</span><span data-en>Which area do you cover?</span></h3>
+        <p class="faq-a"><span data-de>Singen, Radolfzell, Konstanz, Stockach, Engen, den Hegau und den Bodensee. Innerhalb von 30 km um Singen ohne Anfahrtspauschale.</span><span data-en>Singen, Radolfzell, Konstanz, Stockach, Engen, the Hegau and Lake Constance. No travel fee within 30 km of Singen.</span></p>
       </div>
       <div class="faq-item">
         <h3 class="faq-q"><span data-de>Fotografieren Sie auch bewohnte Objekte?</span><span data-en>Do you also shoot occupied properties?</span></h3>
-        <p class="faq-a"><span data-de>Ja, wir stimmen den Termin und die Vorbereitung vorher gemeinsam ab.</span><span data-en>Yes, we coordinate the timing and preparation together in advance.</span></p>
+        <p class="faq-a"><span data-de>Ja. Sie erhalten vorab eine kurze Vorbereitungs-Checkliste, den Termin stimmen wir mit Eigentümer oder Mietern ab.</span><span data-en>Yes. You receive a short preparation checklist beforehand, and we coordinate the date with the owner or tenants.</span></p>
       </div>
       <div class="faq-item">
-        <h3 class="faq-q"><span data-de>Bieten Sie auch virtuelle Rundgänge an?</span><span data-en>Do you offer virtual tours too?</span></h3>
-        <p class="faq-a"><span data-de>Ja, auf Anfrage als Ergänzung zum Bildpaket.</span><span data-en>Yes, on request as an addition to the image package.</span></p>
+        <h3 class="faq-q"><span data-de>Wie funktioniert der 360°-Rundgang?</span><span data-en>How does the 360° tour work?</span></h3>
+        <p class="faq-a"><span data-de>Wir fotografieren jeden Raum als Panorama und liefern einen Link, den Sie in Exposé, Portal oder Website einbetten. Kein Abo, keine laufenden Kosten.</span><span data-en>We shoot each room as a panorama and deliver a link you can embed in listings, portals or your website. No subscription, no running costs.</span></p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="anfrage">
   <div class="wrap">
-    <div class="cta-band reveal is-visible">
-      <p class="cta-band-title">
-        <span data-de>Erzählen Sie uns von Ihrem Objekt.</span>
-        <span data-en>Tell us about your property.</span>
-      </p>
-      <a class="btn btn-primary" href="https://wa.me/491785536715" target="_blank" rel="noopener">
-        <span data-de>Jetzt Termin sichern</span><span data-en>Book a slot now</span>
-      </a>
+    <div class="section-head reveal">
+      <p class="eyebrow"><span data-de>Anfrage</span><span data-en>Enquiry</span></p>
+      <h2 class="section-title"><span data-de>Erzählen Sie uns von <em>Ihrem Objekt</em>.</span><span data-en>Tell us about <em>your property</em>.</span></h2>
+      <p class="section-lede"><span data-de>Adresse, Objektart, Wunschtermin — mehr brauchen wir nicht. Antwort innerhalb eines Werktages.</span><span data-en>Address, property type, preferred date — that's all we need. Reply within one business day.</span></p>
+    </div>
+    <div class="inquiry-grid reveal">
+      <form class="contact-form" action="https://formspree.io/f/mzepdgva" method="POST" id="contact-form">
+        <div class="contact-form-row">
+          <div>
+            <label for="cf-name"><span data-de>Name</span><span data-en>Name</span></label>
+            <input type="text" id="cf-name" name="name" required autocomplete="name">
+          </div>
+          <div>
+            <label for="cf-email">E-Mail</label>
+            <input type="email" id="cf-email" name="_replyto" required autocomplete="email">
+          </div>
+        </div>
+        <div class="contact-form-row">
+          <div>
+            <label for="cf-phone"><span data-de>Telefon (optional)</span><span data-en>Phone (optional)</span></label>
+            <input type="tel" id="cf-phone" name="telefon" autocomplete="tel">
+          </div>
+          <div>
+            <label for="cf-type"><span data-de>Objektart</span><span data-en>Property type</span></label>
+            <select id="cf-type" name="objektart" required>
+              <option value="Wohnung">Wohnung</option>
+              <option value="Haus">Haus</option>
+              <option value="Mehrfamilienhaus">Mehrfamilienhaus</option>
+              <option value="Gewerbe">Gewerbe / Büro</option>
+              <option value="Ferienwohnung">Ferienwohnung</option>
+              <option value="Neubau">Neubau / Bauträger</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label for="cf-address"><span data-de>Objektadresse oder Ort</span><span data-en>Property address or town</span></label>
+          <input type="text" id="cf-address" name="objektadresse" required placeholder="z. B. Radolfzell, Seestraße">
+        </div>
+        <div>
+          <label for="cf-message"><span data-de>Nachricht (Paket, Wunschtermin, Besonderheiten)</span><span data-en>Message (package, preferred date, specifics)</span></label>
+          <textarea id="cf-message" name="message" required></textarea>
+        </div>
+        <input type="hidden" name="_subject" value="Anfrage Immobilienfotografie über hegart.de">
+        <input type="hidden" name="seite" value="immobilienfotografie">
+        <button type="submit" class="btn btn-primary">
+          <span data-de>Angebot anfordern</span><span data-en>Request a quote</span>
+        </button>
+        <p class="contact-form-note">
+          <span data-de>Unverbindlich. Wir melden uns innerhalb eines Werktages mit Termin und Festpreis.</span>
+          <span data-en>No obligation. We reply within one business day with a date and fixed price.</span>
+        </p>
+        <div class="contact-form-success" id="contact-form-success">
+          <span data-de>Danke! Ihre Anfrage ist angekommen — wir melden uns innerhalb eines Werktages.</span>
+          <span data-en>Thank you! Your enquiry has arrived — we'll be in touch within one business day.</span>
+        </div>
+      </form>
+      <div class="inquiry-side">
+        <div class="inquiry-card">
+          <p class="inquiry-card-title"><span data-de>Lieber direkt?</span><span data-en>Prefer direct contact?</span></p>
+          <p><span data-de>Schicken Sie uns Adresse und Objektart per WhatsApp — wir antworten meist innerhalb weniger Stunden.</span><span data-en>Send us the address and property type via WhatsApp — we usually reply within a few hours.</span></p>
+          <a class="btn btn-primary" href="https://wa.me/491785536715?text=Hallo%20Hegart%2C%20ich%20interessiere%20mich%20f%C3%BCr%20Immobilienfotografie." target="_blank" rel="noopener">
+            <span data-de>WhatsApp schreiben</span><span data-en>Message on WhatsApp</span>
+          </a>
+          <div class="inquiry-card-meta">
+            <a href="tel:+491785536715">+49 178 5536715</a><br>
+            <a href="mailto:info@hegart.de">info@hegart.de</a>
+          </div>
+        </div>
+        <div class="inquiry-note">
+          <strong><span data-de>Einsatzgebiet:</span><span data-en>Service area:</span></strong>
+          <span data-de>Singen, Radolfzell, Konstanz, Stockach, Engen, Hegau und rund um den Bodensee. Studio: Thurgauerstraße 5, 78224 Singen.</span>
+          <span data-en>Singen, Radolfzell, Konstanz, Stockach, Engen, Hegau and around Lake Constance. Studio: Thurgauerstraße 5, 78224 Singen.</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>

@@ -187,3 +187,62 @@
     });
   });
 })();
+
+/* ---------- before / after compare slider ---------- */
+(function () {
+  document.querySelectorAll('.ba-compare').forEach(function (box) {
+    var range = box.querySelector('.ba-range');
+    if (!range) return;
+    function update() { box.style.setProperty('--pos', range.value + '%'); }
+    range.addEventListener('input', update);
+    update();
+  });
+})();
+
+/* ---------- 360° tour: load Pannellum only on demand ---------- */
+(function () {
+  var PANNELLUM = 'https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum';
+  var loading = null;
+
+  function loadPannellum() {
+    if (window.pannellum) return Promise.resolve();
+    if (loading) return loading;
+    loading = new Promise(function (resolve, reject) {
+      var css = document.createElement('link');
+      css.rel = 'stylesheet';
+      css.href = PANNELLUM + '.css';
+      document.head.appendChild(css);
+      var js = document.createElement('script');
+      js.src = PANNELLUM + '.js';
+      js.onload = resolve;
+      js.onerror = reject;
+      document.head.appendChild(js);
+    });
+    return loading;
+  }
+
+  document.querySelectorAll('[data-tour-load]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var box = btn.closest('.tour-box');
+      var viewer = box && box.querySelector('.tour-viewer');
+      if (!box || !viewer) return;
+      btn.disabled = true;
+      loadPannellum().then(function () {
+        box.classList.add('is-loaded');
+        window.pannellum.viewer(viewer, {
+          type: 'equirectangular',
+          panorama: btn.getAttribute('data-panorama'),
+          autoLoad: true,
+          autoRotate: -2,
+          autoRotateInactivityDelay: 4000,
+          compass: false,
+          showFullscreenCtrl: true,
+          hfov: 100
+        });
+      }).catch(function () {
+        btn.disabled = false;
+        alert('Der Rundgang konnte nicht geladen werden. Bitte später erneut versuchen.');
+      });
+    });
+  });
+})();
