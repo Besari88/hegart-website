@@ -1082,8 +1082,36 @@ html[lang="en"] a[data-en], html[lang="de"] a[data-de] { display: inline-flex; }
   .nav-links { display: none; }
   .nav-burger { display: flex; }
 }
+
+/* ============================================================
+   PAAR-GALERIE (Hochzeitsseiten)
+   Die Galerie ist ein durchgehendes Bild; es liegt in Kacheln vor,
+   damit kein einzelnes Bild die Größengrenzen mobiler Browser reißt.
+   ============================================================ */
+.couple-gallery { padding-top: 0; }
+.couple-gallery-inner {
+  max-width: 1366px;
+  margin-inline: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 0;                 /* keine Lücken zwischen den Kacheln */
+  background: var(--cream);
+}
+.couple-gallery-inner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+/* Kacheln 1px überlappen: sonst blitzt beim Skalieren eine Haarlinie durch */
+.couple-gallery-inner img + img { margin-top: -1px; }
+.couple-gallery-cta {
+  margin-top: clamp(2rem, 5vw, 3.25rem);
+  display: flex;
+  justify-content: center;
+}
 </style>
-<style id="__hegart_edits" data-model="{&quot;e1&quot;:{&quot;desktop&quot;:{&quot;background-color&quot;:&quot;#3c6c57&quot;},&quot;tablet&quot;:{},&quot;mobile&quot;:{}},&quot;e2&quot;:{&quot;desktop&quot;:{&quot;background-color&quot;:&quot;#F0A93C&quot;,&quot;height&quot;:&quot;580px&quot;,&quot;display&quot;:&quot;block&quot;,&quot;margin-left&quot;:&quot;0&quot;,&quot;margin-right&quot;:&quot;auto&quot;,&quot;object-fit&quot;:&quot;cover&quot;,&quot;object-position&quot;:&quot;80% 40%&quot;},&quot;tablet&quot;:{},&quot;mobile&quot;:{}},&quot;e3&quot;:{&quot;desktop&quot;:{},&quot;tablet&quot;:{},&quot;mobile&quot;:{&quot;min-height&quot;:&quot;0px&quot;}}}">[data-eid="e1"]{background-color:#3c6c57 !important}[data-eid="e2"]{background-color:#F0A93C !important;height:580px !important;display:block !important;margin-left:0 !important;margin-right:auto !important;object-fit:cover !important;object-position:80% 40% !important}@media (max-width:640px){[data-eid="e3"]{min-height:0px !important}}</style></head>
+<style id="__hegart_edits"></style></head>
 <body data-new-gr-c-s-check-loaded="14.1139.0" data-gr-ext-installed="">
 
 <header class="nav">
@@ -1115,7 +1143,7 @@ html[lang="en"] a[data-en], html[lang="de"] a[data-de] { display: inline-flex; }
 
 <section class="couple-hero">
   <div class="couple-hero-photo" draggable="false" alt="Hochzeitsfotografie Singen – Klesta &amp; Erand Hegart Studio">
-    <img src="media/extracted/fotografie-hochzeiten-klesta-erand-b6f74a9f2129.webp" alt="Hochzeitsfotografie Singen – Klesta &amp; Erand | Hegart Studio" loading="lazy" draggable="false" style="width: 594px; left: 2px; top: 4px; height: 681px;" data-eid="e2">
+    <img src="media/extracted/fotografie-hochzeiten-klesta-erand-b6f74a9f2129.webp" alt="Hochzeitsfotografie Singen – Klesta &amp; Erand | Hegart Studio" loading="lazy" draggable="false" data-eid="e2">
   </div>
   <div class="couple-hero-text" draggable="false" data-eid="e1">
     <p class="page-hero-crumb" style="color:rgba(46,42,38,.55);" draggable="false"><a href="fotografie.html" style="color:var(--coral);">Fotografie</a> / <a href="fotografie-hochzeiten.html" style="color:var(--coral);"><span data-de="">Hochzeiten</span><span data-en="">Weddings</span></a></p>
@@ -1124,11 +1152,23 @@ html[lang="en"] a[data-en], html[lang="de"] a[data-de] { display: inline-flex; }
   </div>
 </section>
 
-<div style="max-width:1366px;margin:1.5rem auto;" draggable="false"><img src="media/extracted/fotografie-hochzeiten-klesta-erand-6ffb02d64ea2.webp" alt="Hochzeitsfotografie Singen (hohentwiel) – Klesta &amp; Erand | Hegart Studio" style="width: 1412px; border-radius: 10px; display: block; height: auto;" draggable="false"></div>
+<section class="section couple-gallery">
+  <div class="couple-gallery-inner">
+      <img src="media/weddings/klesta-erand-01.webp" width="1366" height="2411" loading="lazy" decoding="async" alt="Hochzeitsfotografie Singen — Klesta & Erand, Teil 1 von 6">
+      <img src="media/weddings/klesta-erand-02.webp" width="1366" height="2411" loading="lazy" decoding="async" alt="Hochzeitsfotografie Singen — Klesta & Erand, Teil 2 von 6">
+      <img src="media/weddings/klesta-erand-03.webp" width="1366" height="2411" loading="lazy" decoding="async" alt="Hochzeitsfotografie Singen — Klesta & Erand, Teil 3 von 6">
+      <img src="media/weddings/klesta-erand-04.webp" width="1366" height="2411" loading="lazy" decoding="async" alt="Hochzeitsfotografie Singen — Klesta & Erand, Teil 4 von 6">
+      <img src="media/weddings/klesta-erand-05.webp" width="1366" height="2411" loading="lazy" decoding="async" alt="Hochzeitsfotografie Singen — Klesta & Erand, Teil 5 von 6">
+      <img src="media/weddings/klesta-erand-06.webp" width="1366" height="2411" loading="lazy" decoding="async" alt="Hochzeitsfotografie Singen — Klesta & Erand, Teil 6 von 6">
+  </div>
+  <div class="wrap couple-gallery-cta">
+    <a class="btn btn-primary" href="https://wa.me/491785536715" target="_blank" rel="noopener">
+      <span data-de>Jetzt Termin sichern</span><span data-en>Book a slot now</span>
+    </a>
+  </div>
+</section>
 
-
-
-<footer class="site-footer" draggable="false" data-eid="e3" style="width: 400px; height: 878px;">
+<footer class="site-footer">
   <div class="wrap">
     <div class="footer-grid">
       <div>
