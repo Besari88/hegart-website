@@ -1510,7 +1510,7 @@
       if (!near(track, 150)) return;
       measure();
       eased += (target - eased) * .1;
-      var d = eased * 50;                        // höchstens 50 Grad
+      var d = eased * 20;                        // höchstens 20 Grad
       wrapEl.style.setProperty('--spin', d.toFixed(1) + 'deg');
     }
     measure(); eased = target;
