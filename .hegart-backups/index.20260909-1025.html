@@ -400,15 +400,13 @@
    PRODUKT — dreht sich beim Scrollen, mit sichtbarem Licht
    ============================================================ */
 .pr { position: relative; background: #05080F; color: var(--cream); }
-/* Kein sticky, keine lange Scrollstrecke: der Abschnitt scrollt normal
-   vorbei. Die Brosche dreht sich von selbst weiter. */
-.pr-track { position: relative; }
+/* Scrollstrecke für die Drehung — vorher setzte das die 3D-Szene per
+   JS; ohne Höhe bliebe der Fortschritt immer null. */
+.pr-track { position: relative; height: 300svh; }
 .pr-stage {
-  position: relative;
-  min-height: clamp(520px, 74svh, 780px);
+  position: sticky; top: 0; height: 100svh;
   display: flex; align-items: center;
   overflow: hidden;
-  padding-block: clamp(3rem, 7vw, 5.5rem);
 }
 /* Der Verlauf liegt hinter dem Objekt, nicht darüber — sonst ist das
    gerenderte Produkt unsichtbar. */
@@ -438,13 +436,9 @@
 .pr-jewel img {
   position: relative;
   width: 100%; height: auto; display: block;
+  transform: rotate(var(--spin, 0deg));
   filter: drop-shadow(0 22px 44px rgba(0, 0, 0, .75))
           drop-shadow(0 0 26px rgba(140, 200, 255, .18));
-  animation: jewel-turn 54s linear infinite;
-}
-@keyframes jewel-turn { to { transform: rotate(360deg); } }
-@media (prefers-reduced-motion: reduce) {
-  .pr-jewel img { animation: none; transform: rotate(10deg); }
 }
 .pr-inner { position: relative; z-index: 3; width: 100%; pointer-events: none; }
 .pr-copy {
@@ -946,7 +940,7 @@
         <div class="pr-copy">
           <h2 class="hg-h2"><span data-de>Schmuck von jeder Seite.</span><span data-en>Jewellery from every side.</span></h2>
           <p class="hg-lede">
-            <span data-de>Ringe, Ketten, Broschen — freigestellt oder auf schwarzem Spiegel, damit jede Öse sichtbar bleibt.</span><span data-en>Rings, chains, brooches — cut out or on black mirror, so every loop stays visible.</span>
+            <span data-de>Ringe, Ketten, Broschen — freigestellt oder auf schwarzem Spiegel, damit jede Öse sichtbar bleibt. Scrollen Sie und drehen Sie mit.</span><span data-en>Rings, chains, brooches — cut out or on black mirror, so every loop stays visible. Scroll and turn it with you.</span>
           </p>
           <ul class="pr-facts">
             <li><span data-de>Freisteller mit transparentem Hintergrund für den Shop</span><span data-en>Cut-outs with a transparent background for your shop</span></li>
@@ -1487,6 +1481,40 @@
       onScroll(); eased = target;
       tick();
     }
+  })();
+
+  /* ============================================================
+     4 — SCHMUCK: das echte Stück, freigestellt, dreht sich beim
+        Scrollen. Kein gerendertes Objekt — ein 3D-Nachbau sieht
+        bei Schmuck immer nach Plastik aus.
+     ============================================================ */
+  (function jewel() {
+    var sec = document.getElementById('pr');
+    if (!sec) return;
+    var track = document.getElementById('pr-track');
+    var wrapEl = document.getElementById('pr-jewel');
+    if (!track || !wrapEl) return;
+
+    if (reduce) { wrapEl.style.setProperty('--spin', '18deg'); return; }
+
+    var target = 0, eased = 0, running = false;
+
+    function measure() {
+      var span = track.offsetHeight - window.innerHeight;
+      var passed = -track.getBoundingClientRect().top;
+      target = span > 0 ? Math.min(1, Math.max(0, passed / span)) : 0;
+    }
+
+    function frame() {
+      requestAnimationFrame(frame);
+      if (!near(track, 150)) return;
+      measure();
+      eased += (target - eased) * .1;
+      var d = eased * 20;                        // höchstens 20 Grad
+      wrapEl.style.setProperty('--spin', d.toFixed(1) + 'deg');
+    }
+    measure(); eased = target;
+    frame();
   })();
 
   /* ============================================================
