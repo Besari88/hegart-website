@@ -469,7 +469,13 @@
 @media (max-width: 860px) {
   /* hochkant: Schmuck oben, Text darunter — nicht übereinander,
      sonst verschwindet genau das Stück, um das es geht */
-  .pr-stage { align-items: flex-end; padding-bottom: clamp(1.5rem, 5svh, 3rem); }
+  /* volle Schirmhöhe wie vorher — sonst schiebt sich die Karte über die
+     Brosche und man sieht nur noch ein paar Blütenspitzen */
+  .pr-stage {
+    min-height: 100svh;
+    align-items: flex-end;
+    padding-block: 0 clamp(1.5rem, 5svh, 3rem);
+  }
   .pr-copy {
     max-width: 100%;
     background: rgba(10, 16, 28, .66);
