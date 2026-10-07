@@ -513,15 +513,53 @@
    Spalten statt Raster: die Texte sind sehr unterschiedlich lang,
    ein starres Raster ließe überall Löcher.
    ============================================================ */
-.gv-grid { columns: 1; column-gap: 1.4rem; }
-@media (min-width: 760px)  { .gv-grid { columns: 2; } }
-@media (min-width: 1180px) { .gv-grid { columns: 3; } }
+/* Karussell: 3 Karten am Desktop, 2 am Tablet, 1 am Handy — alle gleich groß,
+   Pfeile links/rechts blättern jeweils um eine Karte weiter. */
+.gv-carousel {
+  --gv-gap: 1.4rem; --gv-per: 1;
+  position: relative;
+  padding: 0 3.4rem;
+}
+@media (min-width: 760px)  { .gv-carousel { --gv-per: 2; } }
+@media (min-width: 1180px) { .gv-carousel { --gv-per: 3; } }
+.gv-grid {
+  display: flex; gap: var(--gv-gap);
+  overflow-x: auto; overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory; scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding: .5rem 0 1.6rem; margin: -.5rem 0 -1.6rem;   /* Platz für Hover-Lift und Schatten */
+}
+.gv-grid::-webkit-scrollbar { display: none; }
+.gv-grid:focus-visible { outline: 2px solid var(--amber); outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) { .gv-grid { scroll-behavior: auto; } }
+.gv-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 2.7rem; height: 2.7rem; padding: 0;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, .22);
+  color: var(--cream); cursor: pointer;
+  transition: background .25s, border-color .25s, opacity .25s;
+}
+.gv-nav:hover:not(:disabled) { background: rgba(5, 225, 159, .18); border-color: rgba(5, 225, 159, .55); }
+.gv-nav:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+.gv-nav:disabled { opacity: .3; cursor: default; }
+.gv-nav svg { width: 1.1rem; height: 1.1rem; }
+.gv-prev { left: 0; }
+.gv-next { right: 0; }
+@media (max-width: 759px) {
+  .gv-carousel { padding: 0 2.6rem; }
+  .gv-nav { width: 2.3rem; height: 2.3rem; }
+}
 
 .gv {
   --mx: 50%; --my: 50%;
   position: relative;
-  break-inside: avoid;
-  margin: 0 0 1.4rem;
+  display: flex; flex-direction: column;
+  flex: 0 0 calc((100% - (var(--gv-per) - 1) * var(--gv-gap)) / var(--gv-per));
+  scroll-snap-align: start;
+  margin: 0;
   padding: clamp(1.5rem, 2.6vw, 2rem);
   border-radius: 20px;
   background: rgba(255, 255, 255, .055);
@@ -562,8 +600,9 @@
   color: rgba(252, 246, 236, .9);
   text-wrap: pretty;
 }
+.gv-text { flex: 1; }
 .gv-who {
-  margin-top: 1.3rem;
+  margin-top: auto;
   padding-top: 1.05rem;
   border-top: 1px solid rgba(255, 255, 255, .12);
   display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem .8rem;
@@ -980,7 +1019,9 @@
       </p>
     </div>
 
-    <div class="gv-grid" data-spot="">
+    <div class="gv-carousel">
+    <button class="gv-nav gv-prev" type="button" aria-label="Zurück / Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <div class="gv-grid" tabindex="0">
       <figure class="gv">
         <div class="gv-stars" role="img" aria-label="5 von 5 Sternen">★★★★★</div>
         <blockquote class="gv-text"><span data-de="">Ich war heute Mittag dort, um Fotos für meine Bewerbung machen zu lassen. Die beiden Inhaber haben sich außergewöhnlich viel Mühe gegeben und sehr schöne Porträts von mir erstellt. Bereits nach etwa einer halben Stunde waren die Fotos fertig.</span><span data-en="">I was there today to get photos for my job application. The two owners went to extraordinary lengths and created beautiful portraits of me. The photos were ready after about half an hour.</span></blockquote>
@@ -1005,6 +1046,8 @@
         <blockquote class="gv-text"><span data-de="">Sehr kompetent, professionell und freundlich. Kann ich nur weiterempfehlen.</span><span data-en="">Very competent, professional and friendly. I can only recommend them.</span></blockquote>
         <figcaption class="gv-who"><span class="gv-name">Matthias Fleig</span></figcaption>
       </figure>
+    </div>
+    <button class="gv-nav gv-next" type="button" aria-label="Weiter / Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
     </div>
   </div>
 </section>
@@ -1491,6 +1534,38 @@
       onScroll(); eased = target;
       tick();
     }
+  })();
+
+  /* ============================================================
+     BEWERTUNGEN-KARUSSELL: Pfeile blättern um eine Karte weiter
+     ============================================================ */
+  (function reviewCarousel() {
+    document.querySelectorAll('.gv-carousel').forEach(function (box) {
+      var track = box.querySelector('.gv-grid');
+      var prev = box.querySelector('.gv-prev');
+      var next = box.querySelector('.gv-next');
+      if (!track || !prev || !next) return;
+      function step() {
+        var card = track.querySelector('.gv');
+        if (!card) return track.clientWidth;
+        var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+        return card.getBoundingClientRect().width + gap;
+      }
+      function update() {
+        var max = track.scrollWidth - track.clientWidth - 2;
+        prev.disabled = track.scrollLeft <= 2;
+        next.disabled = track.scrollLeft >= max;
+      }
+      prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: 'smooth' }); });
+      next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: 'smooth' }); });
+      track.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      track.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight') { e.preventDefault(); next.click(); }
+        if (e.key === 'ArrowLeft')  { e.preventDefault(); prev.click(); }
+      });
+      update();
+    });
   })();
 
   /* ============================================================
