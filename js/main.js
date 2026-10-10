@@ -227,6 +227,25 @@
       var viewer = box && box.querySelector('.tour-viewer');
       if (!box || !viewer) return;
       btn.disabled = true;
+      // Eigener Hegart-Rundgang (tour.hegart.de): als iframe einbetten
+      var src = btn.getAttribute('data-tour-src');
+      if (src) {
+        var frame = document.createElement('iframe');
+        frame.src = src;
+        frame.title = document.documentElement.lang === 'en' ? '360° tour' : '360°-Rundgang';
+        frame.setAttribute('allow', 'fullscreen; accelerometer; gyroscope; xr-spatial-tracking');
+        frame.setAttribute('allowfullscreen', '');
+        frame.loading = 'eager';
+        frame.className = 'tour-frame';
+        viewer.appendChild(frame);
+        var open = document.createElement('a');
+        open.href = src; open.target = '_blank'; open.rel = 'noopener';
+        open.className = 'tour-open';
+        open.textContent = document.documentElement.lang === 'en' ? 'Open full screen ↗' : 'Vollbild öffnen ↗';
+        box.appendChild(open);
+        box.classList.add('is-loaded');
+        return;
+      }
       loadPannellum().then(function () {
         box.classList.add('is-loaded');
         window.pannellum.viewer(viewer, {
