@@ -387,6 +387,10 @@ html[lang="en"] a[data-en], html[lang="de"] a[data-de] { display: inline-flex; }
   background: linear-gradient(var(--amber), transparent);
   animation: scroll-line 1.8s ease-in-out infinite;
 }
+/* On phones and short screens the hero buttons reach the bottom, so the cue would sit on them */
+@media (max-width: 700px), (max-height: 760px) {
+  .hero-scroll { display: none; }
+}
 @keyframes scroll-line {
   0%, 100% { transform: scaleY(1); transform-origin: top; }
   50% { transform: scaleY(.4); transform-origin: top; }
